@@ -207,8 +207,37 @@ Ho ho hóó, wat een feest! 🎅✨`,
     }
     createBackgroundIcons();
 
+    // Check if developer mode is enabled via URL parameter
+    function isDevMode() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('dev') === 'true';
+    }
+
     function isDayUnlocked(dayNumber) {
-        return true;
+        // Developer mode bypasses all date restrictions
+        if (isDevMode()) {
+            return true;
+        }
+
+        // Get current date
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth(); // 0-indexed, so December = 11
+        const currentDay = now.getDate();
+
+        // Check if we're in December 2025 or later
+        if (currentYear > 2025 || (currentYear === 2025 && currentMonth === 11)) {
+            // We're in December 2025 or later
+            // Day is unlocked if the current date is >= the day number
+            if (currentYear === 2025 && currentMonth === 11) {
+                return currentDay >= dayNumber;
+            }
+            // If we're past December 2025, all days are unlocked
+            return true;
+        }
+
+        // We're before December 2025, so nothing is unlocked
+        return false;
     }
 
     function handleDayClick(box, char) {
