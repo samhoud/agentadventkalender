@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree Advent Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="snow-container" id="snow-container"></div>
+
+    <!-- Password Protection Overlay -->
+    <div id="password-overlay" class="password-overlay">
+        <div class="password-container">
+            <div class="password-icon">🎄</div>
+            <h1 class="password-title">Christmas Advent Calendar</h1>
+            <p class="password-subtitle">Enter the password to unlock the magic</p>
+            <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+            <button id="password-submit" class="password-submit">Unlock Calendar</button>
+            <div id="password-error" class="password-error hidden">Incorrect password. Try again!</div>
+        </div>
+    </div>
+
+    <main class="main-container" id="main-content" style="display: none;">
+        <h1 class="title">Advent Calendar</h1>
+
+        <div class="tree-container" id="tree-container">
+            <!-- Rows will be injected here by JS -->
+        </div>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn" id="close-btn">&times;</button>
+            <div class="modal-body">
+                <h2 id="char-name">Character Name</h2>
+                <div class="char-day">Day <span id="char-day">1</span></div>
+                <p id="char-desc">Character description goes here.</p>
+
+                <!-- Carousel -->
+                <div id="carousel-container" class="carousel-container">
+                    <div id="carousel-slides">
+                        <!-- Slides injected by JS -->
+                    </div>
+                    <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
+                    <button class="carousel-btn next" id="next-btn">&#10095;</button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
+                </div>
+
+                <!-- Microsoft Forms Section (Day 10) -->
+                <div id="forms-container" class="forms-container" style="display: none;">
+                    <h3 class="forms-title">Stem voor een naam!</h3>
+                    <p class="forms-subtitle">Vul hieronder je stem in:</p>
+
+                    <!-- Microsoft Forms Voting Form -->
+                    <div class="forms-vote-section">
+                        <iframe width="100%" height="400px"
+                            src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=e5IXe-SJt0GS4WPlAb5bJ1C7r3WL2qdJmZ42ntggZmJUNFVMQTgxNEJJMjExTTZXTUlEWjRKSjNHQy4u&embed=true"
+                            frameborder="0" marginwidth="0" marginheight="0"
+                            style="border: none; max-width:100%; border-radius: 8px;" allowfullscreen
+                            webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Microsoft Forms Live Results -->
+                    <div class="forms-results-section">
+                        <h4 class="forms-results-title">Live Resultaten:</h4>
+                        <iframe width="100%" height="500px"
+                            src="https://forms.microsoft.com/Pages/AnalysisPage.aspx?AnalyzerToken=s2gMxbSDJ6Wo2sbJIU0Bibd0BBZ76onv&id=e5IXe-SJt0GS4WPlAb5bJ1C7r3WL2qdJmZ42ntggZmJUNFVMQTgxNEJJMjExTTZXTUlEWjRKSjNHQy4u"
+                            frameborder="0" style="border: none; max-width: 100%; border-radius: 8px;" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Compliment Section -->
+                <div id="compliment-container" class="compliment-container" style="display: none;">
+                    <button id="compliment-btn" class="compliment-btn">🎁 Geef me een compliment! 🎁</button>
+                    <div id="compliment-text" class="compliment-text"></div>
+                </div>
+
+                <!-- Flip Cards Section (Day 9) -->
+                <div id="flip-cards-container" class="flip-cards-container" style="display: none;">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Toekomst ZONDER AI Agent</h3>
+                                <p>Draai om te zien...</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img id="flip-img-no-ai" src="" alt="Future without AI">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Toekomst MET AI Agent</h3>
+                                <p>Draai om te zien...</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <img id="flip-img-ai" src="" alt="Future with AI">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
