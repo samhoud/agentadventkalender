@@ -478,4 +478,67 @@ Ho ho hóó, wat een feest! 🎅✨`,
             }
         });
     }
+
+    // Keyboard navigation with Enter key
+    let currentDayIndex = -1; // Start before the first item (star)
+    let dayElements = []; // Will store references to clickable elements
+
+    // Populate dayElements after the tree is built
+    function initializeKeyboardNavigation() {
+        dayElements = [];
+
+        // Find the star element
+        const starElement = document.querySelector('.star-box');
+        if (starElement) {
+            dayElements.push({ element: starElement, day: 'star' });
+        }
+
+        // Find all interactive days in order (8-19)
+        const interactiveDays = [8, 9, 10, 11, 12, 15, 16, 17, 18, 19];
+        interactiveDays.forEach(dayNum => {
+            const char = characters.find(c => c.day === dayNum);
+            if (char && char.interactive && isDayUnlocked(dayNum)) {
+                // Find the corresponding day box
+                const dayBoxes = document.querySelectorAll('.day-box.ball--dark, .tree-trunk');
+                dayBoxes.forEach(box => {
+                    if (box.textContent === String(dayNum) && !box.classList.contains('ball--locked')) {
+                        dayElements.push({ element: box, day: dayNum });
+                    }
+                });
+            }
+        });
+    }
+
+    // Call after tree is built
+    setTimeout(initializeKeyboardNavigation, 100);
+
+    // Listen for Enter key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            // Don't interfere with password input
+            if (passwordOverlay && passwordOverlay.style.display !== 'none') {
+                return;
+            }
+
+            // Don't interfere if modal is open
+            if (modal && !modal.classList.contains('hidden')) {
+                return;
+            }
+
+            e.preventDefault();
+
+            // Move to next day
+            currentDayIndex++;
+
+            // Wrap around to beginning if we've gone past the end
+            if (currentDayIndex >= dayElements.length) {
+                currentDayIndex = 0;
+            }
+
+            // Click the current day
+            if (dayElements[currentDayIndex]) {
+                dayElements[currentDayIndex].element.click();
+            }
+        }
+    });
 });
