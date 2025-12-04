@@ -683,7 +683,7 @@ body {
     border: 2px solid var(--celestial-iris);
     font-size: 1.1rem;
     line-height: 1.6;
-    color: var(--infinite-ivory);
+    color: black !important;
     min-height: 80px;
     display: flex;
     align-items: center;

@@ -1,0 +1,25 @@
+/* SLEIGH ANIMATION STYLES */
+.sleigh-img {
+    position: fixed;
+    bottom: 20px;
+    left: -700px;
+    /* Start off-screen to the left */
+    width: 600px;
+    /* Adjust size as needed */
+    z-index: 2000;
+    pointer-events: none;
+}
+
+@keyframes slideAcross {
+    0% {
+        left: -700px;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+.sleigh-animate {
+    animation: slideAcross 8s linear forwards;
+}

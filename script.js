@@ -267,21 +267,17 @@ Ho ho hóó, wat een feest! 🎅✨`,
                     box.innerHTML = `<div class="star-shape">★</div>`;
 
                     // Find star character data (usually index 0 or find by type)
-                    // Star is no longer clickable
-                    /*
                     const starChar = characters.find(c => c.type === 'star');
                     if (starChar) {
+                        let sleighHasFlown = false;
                         box.addEventListener('click', () => {
-                            charNameEl.textContent = starChar.name;
-                            charDayEl.textContent = '';
-                            charDescEl.textContent = starChar.desc;
-                            document.getElementById('carousel-container').style.display = 'none';
-                            document.getElementById('forms-container').style.display = 'none';
-                            document.getElementById('compliment-container').style.display = 'none';
-                            modal.classList.remove('hidden');
+                            const sleighImg = document.getElementById('sleigh-img');
+                            if (sleighImg && !sleighHasFlown) {
+                                sleighImg.classList.add('sleigh-animate');
+                                sleighHasFlown = true;
+                            }
                         });
                     }
-                    */
 
                 } else if (item.type === 'trunk') {
                     box.classList.add('tree-trunk');
