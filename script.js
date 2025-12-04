@@ -72,23 +72,10 @@ de Kerstman 🎅✨`
         { day: 7, name: "7 December", desc: "", interactive: false },
         {
             day: 8,
-            name: "Speurtocht naar de verstopplekken",
+            name: "Eerste boodschap van de Kerstman",
             interactive: true,
-            desc: `Ho ho ho, &samhoud.
- 
-Zo, Sinterklaas is eindelijk weer vertrokken naar Spanje. Nu is het mijn beurt. En ik heb iets leuks meegenomen: een digitale agent advent kalender. Speciaal voor jullie.
- 
-Hoe werkt het? Simpel: elke maandag t/m vrijdag een vakje tot de kerstvakantie. Volgens mij hoef ik het niet uit te leggen, dat eerste vakje hebben jullie ook open gekregen.
- 
-Wat hebben jullie dit jaar mooie stappen gezet. Copilot gebruik +500% sinds de zomer. Chapeau! Je zou denken: met al die AI kunnen we nu lekker 3 dagen per week werken, toch?
- 
-Maar... ik heb even rondgekeken. Niets is minder waar. Jullie zijn keihard aan het werken. Die vierdaagse werkweek lijkt voor sommige van jullie ook allang verleden tijd.
- 
-Dus even een eerlijke vraag tussen ons: gebruiken jullie die agents wel goed genoeg? Want wat ik ook zie: een hele familie aan agents die gewoon klaarstaat. Wachtend. Tot iemand ze eindelijk inzet. 'Agentic workforce' - jullie kennen die term wel, het buzzword van het jaar. Maar &samhoud noemt het natuurlijk liever: de familie.
- 
-Misschien weet ik al wat het probleem is: die familie heeft bij de meesten van jullie nog geen gezicht. Ze zijn er wel, maar een beetje onzichtbaar. Nog maar even...
- 
-Hou deze kalender goed in de gaten. Want binnenkort stellen ze zich eindelijk écht voor. Geloof me, dit wil je niet missen.`
+            desc: "",
+            video: "images/Santa's Digitale Kalender.mp4"
         },
         {
             day: 9,
@@ -432,6 +419,18 @@ Ho ho hóó, wat een feest! 🎅✨`,
             const flipImgAi = document.getElementById('flip-img-ai');
             if (flipImgNoAi) flipImgNoAi.src = char.flipCards.withoutAi;
             if (flipImgAi) flipImgAi.src = char.flipCards.withAi;
+        }
+
+        const videoContainer = document.getElementById('video-container');
+        if (char.video && videoContainer) {
+            videoContainer.style.display = 'block';
+            videoContainer.innerHTML = `<video class="video-player" controls>
+                <source src="${char.video}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>`;
+        } else if (videoContainer) {
+            videoContainer.style.display = 'none';
+            videoContainer.innerHTML = '';
         }
 
         modal.classList.remove('hidden');
