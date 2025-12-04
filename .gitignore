@@ -1,0 +1,13 @@
+# Replit
+.replit
+.config/
+.upm/
+.cache/
+replit.nix
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
