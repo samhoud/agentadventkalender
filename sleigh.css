@@ -1,27 +1,35 @@
 /* SLEIGH ANIMATION STYLES */
 .sleigh-img {
     position: fixed;
-    bottom: 20px;
-    left: -700px;
-    /* Start off-screen to the left */
-    width: 600px;
-    /* Adjust size as needed */
+    bottom: 30%;
+    left: -120px;
+    width: 80px;
     z-index: 2000;
     pointer-events: none;
 }
 
 @keyframes slideAcross {
     0% {
-        left: -700px;
+        left: -120px;
+        bottom: 30%;
     }
-
+    25% {
+        bottom: 55%;
+    }
+    50% {
+        bottom: 65%;
+    }
+    75% {
+        bottom: 55%;
+    }
     100% {
         left: 100vw;
+        bottom: 30%;
     }
 }
 
 .sleigh-animate {
-    animation: slideAcross 8s linear forwards;
+    animation: slideAcross 3s ease-in-out forwards;
 }
 
 /* VIDEO STYLES */
