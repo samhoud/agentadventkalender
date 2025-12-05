@@ -101,30 +101,48 @@ Maar eerst: wil je weten hoe de toekomst van &samhoud eruitziet met én zonder S
         },
         {
             day: 10,
-            name: "The InterviewAnalyzer Elf",
+            name: "Identiteitscrisis!",
             interactive: true,
-            desc: `Ho ho hóó lieve consultantjes van &samhoud!
-Mijn nieuwe hulpjes—jullie slimme AI agents—staan te trappelen om hun grote face reveal aan jullie te doen. Maar één laatste elfje houdt zich nog een beetje schuil… en dat is omdat ze vóór ze haar gezicht laat zien, eerst een mooie naam van jullie wil krijgen!
+            image: "images/Interview.png",
+            desc: `Help deze agent uit haar identiteitscrisis!
+Een jaar in ontwikkeling. Sinds oktober live. En ze is een machine.
+10 interviews analyseren? Makkelijk. 20? No sweat. 30, 40? The more the merrier! Terwijl jij na 3 interviews al niet meer weet wie wat zei, is zij net lekker warm gedraaid.
 
-Dit lieve elfje is de InterviewAnalyzer. En ze wil graag een naam die begint met de letter I.
-Misschien Inge? Ian? Ilse? Isabelle?
-Maar natuurlijk: de eer is helemaal aan jullie!
+Haar superkracht?
+Structuur in chaos. Altijd. Ze blijft consistent, ook als jij allang de weg kwijt bent. Vaste Minto-structuur: hoofdconclusies, argumenten, quotes. Plus: ze behoudt de tone of voice van de klant. Zodat je quotes herkenbaar blijven. Authentiek. Bruikbaar.
 
-Stuur mij via het vakje een klein briefje met haar naam, en aan het einde van de dag kiezen we de meest populaire uit.
+Klinkt goed? Is het ook.
+En nu heeft ze eindelijk een gezicht. Maar haar naam?
 
-Ho ho hóó, wat spannend allemaal! 🎅✨`,
-            forms: true
+Intana...
+
+Zeker bedacht door een developer zonder fantasie? Klinkt als een crypto coin die na twee weken crasht. Niet bepaald een naam die past bij de &samhoud familie, toch?
+
+Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
+
+Help haar:
+Inge de Interviewontleder
+Indy de Inzichtmaker
+Of jouw eigen geniale creatie?
+Winnende naam krijgt een flesje bubbels én een plekje op SharePoint.`,
+            forms: true,
+            closingText: `Ga snel naar SharePoint om haar nog beter te leren kennen: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Intana---Interview-Analyser.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Intana - Interview Analyser</a>`
         },
         {
             day: 11,
-            name: "Kerstcomplimenten",
+            name: "Fenna de Feedbackfixer",
             interactive: true,
-            desc: `Ho ho hóó lieve consultant! 🎅✨
-De Kerstman heeft even door al jullie collega-feedback gesnuffeld — en wat heb ik daar gezien? Jij bent echt een topper! Een glinsterende piek op de kerstboom, om precies te zijn.
+            image: "images/Fenna.png",
+            desc: `Ho ho ho, het is weer die tijd van het jaar.
+Nee, niet Kerst. Endyears.
 
-Mijn geheugen wordt met de jaren natuurlijk niet béter… al die cadeaus, rendieren en namen onthoudt een oude man niet zomaar. Maar geen zorgen! Als je op de knop klikt, fluister ik je precies in wat jouw collega's allemaal over je hebben gezegd.
+En jij hebt vast nog een inbox vol feedbackverzoeken die je vóór 12 december moet schrijven.
+Voor sommigen is het heerlijk - eindelijk al die opgekropte feedback eruit gooien. Voor anderen is het een nachtmerrie. Je wilt eerlijk zijn, maar niet hard. Constructief, maar niet vaag. Motiverend, maar niet fake. En dat ook nog eens in de drukste tijd van het jaar.
 
-Ho ho hóó, ik kan je alvast verklappen: het is héél feestelijk. 🎄✨`,
+Gelukkig bestaat er nu Fenna.
+Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback netjes op papier te krijgen én traint je ondertussen in het geven van sterkere feedback.
+
+Wil je alvast een voorproefje van Fenna's skills? Klik op de knop en krijg een compliment - voor jezelf, of als inspiratie voor de feedback die je gaat schrijven.`,
             compliments: true
         },
         { day: 12, name: "12 December", desc: "Coming soon...", interactive: true },
@@ -493,7 +511,12 @@ Ho ho hóó, wat een feest! 🎅✨`,
         // Display closing text if present
         if (char.closingText && closingTextContainer) {
             closingTextContainer.style.display = 'block';
-            closingTextContainer.textContent = char.closingText;
+            // Use innerHTML to support HTML links
+            if (char.closingText.includes('<a')) {
+                closingTextContainer.innerHTML = char.closingText;
+            } else {
+                closingTextContainer.textContent = char.closingText;
+            }
         }
 
         const videoContainer = document.getElementById('video-container');
