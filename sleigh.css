@@ -2,15 +2,15 @@
 .sleigh-img {
     position: fixed;
     bottom: 30%;
-    left: -120px;
-    width: 80px;
+    left: -200px;
+    width: 200px;
     z-index: 2000;
     pointer-events: none;
 }
 
 @keyframes slideAcross {
     0% {
-        left: -120px;
+        left: -200px;
         bottom: 30%;
     }
     25% {
@@ -29,7 +29,7 @@
 }
 
 .sleigh-animate {
-    animation: slideAcross 3s ease-in-out forwards;
+    animation: slideAcross 6s ease-in-out forwards;
 }
 
 /* VIDEO STYLES */
