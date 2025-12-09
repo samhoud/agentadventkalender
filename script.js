@@ -108,6 +108,23 @@ Aan de slag? Check de Sales Super Prompt op SharePoint: <a href="https://samhoud
         },
         {
             day: 10,
+            name: "Fenna de Feedbackfixer",
+            interactive: true,
+            image: "images/Fenna.png",
+            desc: `Ho ho ho, het is weer die tijd van het jaar.
+Nee, niet Kerst. <b>Endyears.</b>
+
+En jij hebt vast nog een inbox vol feedbackverzoeken die je vóór 12 december moet schrijven.
+Voor sommigen is het heerlijk - eindelijk al die opgekropte feedback eruit gooien. Voor anderen is het een nachtmerrie. Je wilt eerlijk zijn, maar niet hard. Constructief, maar niet vaag. Motiverend, maar niet fake. En dat ook nog eens in de drukste tijd van het jaar.
+
+<b>Gelukkig bestaat er nu Fenna.</b>
+Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback netjes op papier te krijgen én traint je ondertussen in het geven van sterkere feedback.
+
+<i>Wil je alvast een voorproefje van Fenna's skills? Klik op de knop en krijg een compliment - voor jezelf, of als inspiratie voor de feedback die je gaat schrijven.</i>`,
+            compliments: true
+        },
+        {
+            day: 11,
             name: "Identiteitscrisis!",
             interactive: true,
             image: "images/Interview.png",
@@ -142,23 +159,6 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
 <i>Winnende naam krijgt een flesje bubbels én een plekje op SharePoint.</i>`,
             forms: true,
             closingText: `Ga snel naar SharePoint om haar nog beter te leren kennen: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Intana---Interview-Analyser.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Intana - Interview Analyser</a>`
-        },
-        {
-            day: 11,
-            name: "Fenna de Feedbackfixer",
-            interactive: true,
-            image: "images/Fenna.png",
-            desc: `Ho ho ho, het is weer die tijd van het jaar.
-Nee, niet Kerst. <b>Endyears.</b>
-
-En jij hebt vast nog een inbox vol feedbackverzoeken die je vóór 12 december moet schrijven.
-Voor sommigen is het heerlijk - eindelijk al die opgekropte feedback eruit gooien. Voor anderen is het een nachtmerrie. Je wilt eerlijk zijn, maar niet hard. Constructief, maar niet vaag. Motiverend, maar niet fake. En dat ook nog eens in de drukste tijd van het jaar.
-
-<b>Gelukkig bestaat er nu Fenna.</b>
-Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback netjes op papier te krijgen én traint je ondertussen in het geven van sterkere feedback.
-
-<i>Wil je alvast een voorproefje van Fenna's skills? Klik op de knop en krijg een compliment - voor jezelf, of als inspiratie voor de feedback die je gaat schrijven.</i>`,
-            compliments: true
         },
         { day: 12, name: "12 December", desc: "Coming soon...", interactive: true },
         { day: 13, name: "13 December", desc: "", interactive: false },
