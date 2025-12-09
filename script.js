@@ -121,7 +121,8 @@ Voor sommigen is het heerlijk - eindelijk al die opgekropte feedback eruit gooie
 Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback netjes op papier te krijgen én traint je ondertussen in het geven van sterkere feedback.
 
 <i>Wil je alvast een voorproefje van Fenna's skills? Klik op de knop en krijg een compliment - voor jezelf, of als inspiratie voor de feedback die je gaat schrijven.</i>`,
-            compliments: true
+            compliments: true,
+            closingText: `Direct aan de slag met Fenna? Kijk in je copilot app of klik op deze link: <a href="https://teams.microsoft.com/l/app/2f02f6b0-f88f-45d1-88b7-7393e8a94f7a?source=app-header-share-entrypoint" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Fenna de FeedbackFixer</a>`
         },
         {
             day: 11,
