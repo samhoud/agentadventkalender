@@ -95,7 +95,7 @@ Dit is een <b>Super Prompt</b> voor de Copilot Research Agent. Je stopt er een b
 
 <b>Resultaat?</b> Je maakt indruk. Echte indruk. Want voorbereiding = halve werk. En betere voorbereiding = meer deals.
 
-Aan de slag? Check de Sales Super Prompt op SharePoint: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Sales-Super-Prompt.aspx?Mode=Edit" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Sales Super Prompt</a>
+Aan de slag? Check de Sales Super Prompt op SharePoint: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Sales-Super-Prompt.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Sales Super Prompt</a>
 
 <i>Maar eerst: wil je weten hoe de toekomst van &samhoud eruitziet met én zonder Syl?</i>`,
             flipCards: {
