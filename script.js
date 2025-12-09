@@ -194,26 +194,14 @@ Ho ho hóó, wat een feest! 🎅✨`,
     ];
 
     const compliments = [
-        "Jij bent de Rudolph van het project: altijd voorop, altijd lichtgevende KPI's.",
-        "Je hebt dit jaar meer impact gemaakt dan de Kerstman in één nacht.",
         "Je stakeholdermanagement is zo warm dat zelfs een sneeuwpop ervan smelt.",
-        "Als er één iemand is die echte value onder de kerstboom legt, ben jij het.",
-        "Jouw deliverables zijn consistenter dan de jaarlijkse kerstafspeellijst.",
-        "Je bent de kerstlichtjes van het team: je brengt structuur, helderheid én een beetje magie.",
-        "Je bent een echte North Star voor je collega's—altijd richting gevend.",
-        "Je weet elke bottleneck sneller op te lossen dan de Kerstman zijn cadeautjes sorteert.",
-        "Jouw work ethic is sterker dan kerstkoekjes in een trommel vol hongerige consultants.",
-        "Je behoudt meer alignment dan een perfect versierde kerstboom met symmetrische ballen.",
-        "Je output is zo high-quality, zelfs de kerstelfjes vragen om je templates.",
-        "Jij bent onze jaarlijkse Q4 miracle KPI booster.",
-        "Met jouw projectplanning zou zelfs de Kerstman zijn wereldreis efficiënter kunnen doen.",
-        "Je brengt more joy in het team dan een onverwacht vrije middag in december.",
-        "Je bent betrouwbaarder dan een SLA met kerstgarantie.",
-        "Je bent de menselijke versie van een end-of-year performance uplift.",
-        "Je houdt de scope beter in toom dan de Kerstman zijn rendieren.",
-        "Jouw werktempo is sneller dan een kerstelf die achterloopt op zijn deadlines.",
-        "Als consultants een adventskalender waren, dan was jij het vakje met de grootste chocolaatjes.",
-        "Je bent het ultieme voorbeeld van een high-impact, low-maintenance Christmas miracle."
+        "Jouw advies is zo helder dat het kan dienen als kerstverlichting voor de hele afdeling",
+        "Met jouw projectplanning zou zelfs de Kerstman zijn cadeautjes efficiënter kunnen rondbrengen",
+        "Jouw deliverables zijn consistenter dan de jaarlijkse kerstafspeellijst",
+        "Jij bent inmiddels zo'n goede proces begeleider, dat je de blauwe bal weet te gooien zonder dat er gewonden raken",
+        "Je bent de gouden standaard voor slide-opmaak; jouw consistentie in uitlijning is een kerstwonder op zich",
+        "Jouw werk ethiek is sterker dan de meeste familiebanden tijdens kerst",
+        "Met jouw projectplanning zou zelfs de Kerstman zijn cadeautjes efficiënter kunnen rondbrengen"
     ];
 
     function createSnow() {
