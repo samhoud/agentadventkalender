@@ -161,7 +161,47 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
             forms: true,
             closingText: `Ga snel naar SharePoint om haar nog beter te leren kennen: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Intana---Interview-Analyser.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Intana - Interview Analyser</a>`
         },
-        { day: 12, name: "12 December", desc: "Coming soon...", interactive: true },
+        {
+            day: 12,
+            name: "Orakel van Inzicht",
+            interactive: true,
+            image: "images/Olivia het Orakel.jpg",
+            desc: `Je kent haar al. Olivia het Orakel, je vriendelijke Copilot-agent in Teams voor al je vragen over People/HR en finance.
+
+Van "hoe zat het ook alweer met ouderschapsverlof?" tot "welke kosten mag ik declareren?" – Olivia zoekt het voor je uit. Geen geruchten. Geen café-wijsheid. Gewoon heldere antwoorden, recht uit onze eigen spelregels.
+
+<b>Maar nu… heeft Olivia een upgrade!</b>
+
+Olivia blijft hetzelfde orakel als altijd, maar dan met <b>extra superpowers</b>.
+Ze kan je nu ook helpen met <b>IT-gerelateerde vragen</b>.
+
+Denk aan bijvoorbeeld:
+
+"Mijn Teams doet raar, wat kan ik zelf checken?"
+
+"Wat is het wifiwachtwoord voor mijn privétoestel?"
+
+"Hoe maak ik een nieuwe groep aan in Teams?"
+
+<i>Kortom: alles wat nu nog te vaak begint met "Hee Sanne, heb je even…?"</i>
+
+<b>Sanne is blij. Jij straks ook.</b>
+
+Olivia reageert direct met een antwoord uit de officiële documenten – of helpt je op weg bij je IT-issue.
+
+Dus: de volgende keer dat je denkt
+<i>"Zal ik dit even aan HR, Finance of Sanne vragen?"</i>
+
+<b>Probeer eerst:</b>
+Vraag het aan <a href="https://samhoud1.sharepoint.com/:u:/r/sites/DATATOOLS-PORTAL/SitePages/Orakel-chatbot.aspx?csf=1&web=1&e=zU2v7R" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel in Teams</a>.
+
+<b>Twijfel je nog of Olivia écht iets voor jou is?</b>
+Klik dan op één van de drie kaarten hieronder en laat Olivia voorspellen hoe jouw toekomst eruitziet.
+
+<i>Met haar.
+Of zonder haar.</i>`,
+            tarotCards: true
+        },
         { day: 13, name: "13 December", desc: "", interactive: false },
         { day: 14, name: "14 December", desc: "", interactive: false },
         { day: 15, name: "15 December", desc: "Coming soon...", interactive: true },
@@ -444,6 +484,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
         const carouselDots = document.getElementById('carousel-dots');
         const formsContainer = document.getElementById('forms-container');
         const flipCardsContainer = document.getElementById('flip-cards-container');
+        const tarotCardsContainer = document.getElementById('tarot-cards-container');
         const imageContainer = document.getElementById('image-container');
         const closingTextContainer = document.getElementById('closing-text-container');
 
@@ -451,6 +492,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
         if (formsContainer) formsContainer.style.display = 'none';
         if (complimentContainer) complimentContainer.style.display = 'none';
         if (flipCardsContainer) flipCardsContainer.style.display = 'none';
+        if (tarotCardsContainer) tarotCardsContainer.style.display = 'none';
         if (imageContainer) imageContainer.style.display = 'none';
         if (closingTextContainer) closingTextContainer.style.display = 'none';
         if (complimentText) complimentText.textContent = '';
@@ -507,6 +549,58 @@ Ho ho hóó, wat een feest! 🎅✨`,
             if (char.flipCards.labelWith && flipLabelWith) {
                 flipLabelWith.textContent = char.flipCards.labelWith;
             }
+        }
+
+        // Tarot Cards Section (Day 12)
+        const tarotMessageContainer = document.getElementById('tarot-message-container');
+        if (tarotCardsContainer) {
+            tarotCardsContainer.style.display = 'none';
+        }
+        if (tarotMessageContainer) {
+            tarotMessageContainer.style.display = 'none';
+        }
+
+        if (char.tarotCards && tarotCardsContainer) {
+            tarotCardsContainer.style.display = 'flex';
+
+            // Reset all cards to unflipped state and make visible
+            const tarotCards = tarotCardsContainer.querySelectorAll('.tarot-card');
+            tarotCards.forEach(card => {
+                card.classList.remove('flipped');
+                card.style.display = 'block';
+            });
+
+            // Hide all messages
+            if (tarotMessageContainer) {
+                const allMessages = tarotMessageContainer.querySelectorAll('.tarot-message');
+                allMessages.forEach(msg => msg.classList.remove('active'));
+            }
+
+            // Add click event to each card
+            tarotCards.forEach(card => {
+                card.onclick = function () {
+                    const cardNumber = this.getAttribute('data-card');
+
+                    // Flip this card
+                    this.classList.add('flipped');
+
+                    // Hide other cards
+                    tarotCards.forEach(otherCard => {
+                        if (otherCard !== this) {
+                            otherCard.style.display = 'none';
+                        }
+                    });
+
+                    // Show corresponding message
+                    if (tarotMessageContainer) {
+                        tarotMessageContainer.style.display = 'block';
+                        const message = tarotMessageContainer.querySelector(`[data-message="${cardNumber}"]`);
+                        if (message) {
+                            message.classList.add('active');
+                        }
+                    }
+                };
+            });
         }
 
         // Display closing text if present
