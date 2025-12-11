@@ -163,18 +163,18 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
         },
         {
             day: 12,
-            name: "Orakel van Inzicht",
+            name: "Olivia het Orakel",
             interactive: true,
             image: "images/Olivia het Orakel.jpg",
-            desc: `Je kent haar al. <a href="https://samhoud1.sharepoint.com/:u:/r/sites/DATATOOLS-PORTAL/SitePages/Orakel-chatbot.aspx?csf=1&web=1&e=zU2v7R" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel</a>, je vriendelijke Copilot agent in Teams voor al je interne vragen over People, Finance én IT. Van "wie is ook alweer de management assistent van Laura?" tot "welke kosten mag ik declareren?" – Olivia zoekt het voor je uit, zonder oordeel.
- 
-Maar wisten jullie al dat Olivia een upgrade heeft gehad?
-Olivia blijft hetzelfde orakel als altijd, maar dan met extra superkrachten voor IT-gerelateerde vragen.
-Denk aan bijvoorbeeld: "Hoe maak ik een nieuwe groep aan in Teams?" of "Wat is het wifi wachtwoord van KDS?"
- 
-Kortom: alles wat nu nog te vaak begint met "Hee Sanne, heb je even…?" is voortaan "Hee Olivia, heb je even...?"
- 
-Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan beantwoorden, heeft ze ook een direct lijntje met de toekomst. Durf jij het aan? Trek een van de Tarotkaarten en ontdek wat er op het punt staat te veranderen.`,
+            desc: `Je kent haar al. <a href="https://teams.microsoft.com/l/app/c03c8129-a4fa-4194-972b-e654197fcdda?source=app-header-share-entrypoint" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel</a>, je vriendelijke Copilot agent in Teams voor al je interne vragen over <b>People</b>, <b>Finance</b> én <b>IT</b>. Van <i>"wie is ook alweer de management assistent van Laura?"</i> tot <i>"welke kosten mag ik declareren?"</i> – Olivia zoekt het voor je uit, zonder oordeel.
+
+<b>Maar wisten jullie al dat Olivia een upgrade heeft gehad?</b>
+Olivia blijft hetzelfde orakel als altijd, maar dan met <i>extra superkrachten</i> voor IT-gerelateerde vragen.
+Denk aan bijvoorbeeld: <i>"Hoe maak ik een nieuwe groep aan in Teams?"</i> of <i>"Wat is het wifi wachtwoord van KDS?"</i>
+
+Kortom: alles wat nu nog te vaak begint met <i>"Hee Sanne, heb je even…?"</i> is voortaan <b>"Hee Olivia, heb je even...?"</b>
+
+Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan beantwoorden, heeft ze ook een <b>direct lijntje met de toekomst</b>. Durf jij het aan? <i>Trek een van de Tarotkaarten en ontdek wat er op het punt staat te veranderen.</i>`,
             tarotCards: true
         },
         { day: 13, name: "13 December", desc: "", interactive: false },
