@@ -627,10 +627,21 @@ Ho ho hóó, wat een feest! 🎅✨`,
         }
 
         modal.classList.remove('hidden');
+
+        // Auto-close modal after 2 minutes (120000ms)
+        if (window.modalAutoCloseTimer) {
+            clearTimeout(window.modalAutoCloseTimer);
+        }
+        window.modalAutoCloseTimer = setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 120000);
     }
 
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
+            if (window.modalAutoCloseTimer) {
+                clearTimeout(window.modalAutoCloseTimer);
+            }
             modal.classList.add('hidden');
         });
     }
@@ -638,6 +649,9 @@ Ho ho hóó, wat een feest! 🎅✨`,
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
+                if (window.modalAutoCloseTimer) {
+                    clearTimeout(window.modalAutoCloseTimer);
+                }
                 modal.classList.add('hidden');
             }
         });
