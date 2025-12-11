@@ -166,40 +166,15 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
             name: "Orakel van Inzicht",
             interactive: true,
             image: "images/Olivia het Orakel.jpg",
-            desc: `Je kent haar al. Olivia het Orakel, je vriendelijke Copilot-agent in Teams voor al je vragen over People/HR en finance.
-
-Van "hoe zat het ook alweer met ouderschapsverlof?" tot "welke kosten mag ik declareren?" – Olivia zoekt het voor je uit. Geen geruchten. Geen café-wijsheid. Gewoon heldere antwoorden, recht uit onze eigen spelregels.
-
-<b>Maar nu… heeft Olivia een upgrade!</b>
-
-Olivia blijft hetzelfde orakel als altijd, maar dan met <b>extra superpowers</b>.
-Ze kan je nu ook helpen met <b>IT-gerelateerde vragen</b>.
-
-Denk aan bijvoorbeeld:
-
-"Mijn Teams doet raar, wat kan ik zelf checken?"
-
-"Wat is het wifiwachtwoord voor mijn privétoestel?"
-
-"Hoe maak ik een nieuwe groep aan in Teams?"
-
-<i>Kortom: alles wat nu nog te vaak begint met "Hee Sanne, heb je even…?"</i>
-
-<b>Sanne is blij. Jij straks ook.</b>
-
-Olivia reageert direct met een antwoord uit de officiële documenten – of helpt je op weg bij je IT-issue.
-
-Dus: de volgende keer dat je denkt
-<i>"Zal ik dit even aan HR, Finance of Sanne vragen?"</i>
-
-<b>Probeer eerst:</b>
-Vraag het aan <a href="https://samhoud1.sharepoint.com/:u:/r/sites/DATATOOLS-PORTAL/SitePages/Orakel-chatbot.aspx?csf=1&web=1&e=zU2v7R" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel in Teams</a>.
-
-<b>Twijfel je nog of Olivia écht iets voor jou is?</b>
-Klik dan op één van de drie kaarten hieronder en laat Olivia voorspellen hoe jouw toekomst eruitziet.
-
-<i>Met haar.
-Of zonder haar.</i>`,
+            desc: `Je kent haar al. <a href="https://samhoud1.sharepoint.com/:u:/r/sites/DATATOOLS-PORTAL/SitePages/Orakel-chatbot.aspx?csf=1&web=1&e=zU2v7R" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel</a>, je vriendelijke Copilot agent in Teams voor al je interne vragen over People, Finance én IT. Van "wie is ook alweer de management assistent van Laura?" tot "welke kosten mag ik declareren?" – Olivia zoekt het voor je uit, zonder oordeel.
+ 
+Maar wisten jullie al dat Olivia een upgrade heeft gehad?
+Olivia blijft hetzelfde orakel als altijd, maar dan met extra superkrachten voor IT-gerelateerde vragen.
+Denk aan bijvoorbeeld: "Hoe maak ik een nieuwe groep aan in Teams?" of "Wat is het wifi wachtwoord van KDS?"
+ 
+Kortom: alles wat nu nog te vaak begint met "Hee Sanne, heb je even…?" is voortaan "Hee Olivia, heb je even...?"
+ 
+Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan beantwoorden, heeft ze ook een direct lijntje met de toekomst. Durf jij het aan? Trek een van de Tarotkaarten en ontdek wat er op het punt staat te veranderen.`,
             tarotCards: true
         },
         { day: 13, name: "13 December", desc: "", interactive: false },
