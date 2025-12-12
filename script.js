@@ -179,7 +179,34 @@ Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan be
         },
         { day: 13, name: "13 December", desc: "", interactive: false },
         { day: 14, name: "14 December", desc: "", interactive: false },
-        { day: 15, name: "15 December", desc: "Coming soon...", interactive: true },
+        {
+            day: 15,
+            name: "Vera de Verhalenverteller",
+            interactive: true,
+            image: "images/Vera de Verhalenverteller.jpg",
+            desc: `<b>Vera de Verhalenverteller</b>
+
+Sinds deze maand heeft elke agent een agent owner. Iemand die verantwoordelijk is voor het bewaken van het gebruik en de kwaliteit ervan.
+ 
+Voor Vera de Verhalenverteller is dat onze lieftallige collega Arnaud. En hij heeft een boodschap voor jullie.
+
+<video controls style="width: 100%; margin: 1.5rem 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+    <source src="images/Arnaud.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<b>Wat doet Vera ook alweer?</b>
+
+Vera helpt je om snel een eerste versie van een veranderverhaal voor een klant te maken, een strategisch communicatie middel dat uitlegt waarom een verandering nodig is, wat er gaat veranderen, hoe dat gebeurt en wat het oplevert.
+ 
+Upload je relevante documenten - deskresearch, interviewtranscripten - en Vera genereert een conceptversie. Je krijgt zelfs twee varianten: één volgens de vaste hoofdstukindeling, en één met een alternatieve structuur die mogelijk beter aansluit bij het verhaal van de klant.
+ 
+Je kan haar terug vinden in Virtual Brain via deze link:
+
+<div style="text-align: center; margin-top: 1.5rem;">
+    <a href="https://samhoud.getvirtualbrain.com/applications/2a9eb051-4b92-4263-bfa3-936cf71966b0" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a>
+</div>`
+        },
         { day: 16, name: "16 December", desc: "Coming soon...", interactive: true },
         { day: 17, name: "17 December", desc: "Coming soon...", interactive: true },
         {
