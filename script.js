@@ -660,6 +660,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 const zones = activeWrapper.querySelectorAll('.photo-zone');
                 zones.forEach(zone => {
                     zone.addEventListener('click', (e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         if (!isShowingResult) {
                             const photoName = zone.getAttribute('data-photo');
