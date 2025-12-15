@@ -1608,10 +1608,18 @@ body {
 /* Sam's Phone Styles */
 .sam-phone-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
-    /* Removed overflow: hidden to allow button to be seen */
+}
+
+.sam-phone-hint {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .sam-phone-wrapper {
