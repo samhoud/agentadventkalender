@@ -207,7 +207,15 @@ Je kan haar terug vinden in Virtual Brain via deze link:
     <a href="https://samhoud.getvirtualbrain.com/applications/2a9eb051-4b92-4263-bfa3-936cf71966b0" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a>
 </div>`
         },
-        { day: 16, name: "16 December", desc: "Coming soon...", interactive: true },
+        {
+            day: 16,
+            name: "Sam de Sessiebouwer",
+            interactive: true,
+            image: "images/Sam de Sessiebouwer.jpg",
+            desc: `In deze rustige decemberperiode, waarin we samen terugblikken op het jaar, zetten we graag ook <b>Sam de Sessiebouwer</b> even in het winterlicht.<br>Zijn agent owner, <b>Hester</b>, begeleidt hem scherp en zorgvuldig, en samen vormen ze inmiddels een uitstekend ingespeeld duo.<br><br><b>Wat doet Sam de Sessiebouwer ook alweer?</b><br>Sam de Sessiebouwer helpt je om snel een stevig eerste concept van een sessieprogramma te maken.<br>Met een transcriptbriefing als input, waarin je de doelen, doelgroep en context van de sessie vastlegt, bouwt Sam een volledig uitgewerkt programma. Denk aan logisch opgebouwde interventies, een gedetailleerde materialenlijst en een overzichtelijke actielijst om meteen stappen te kunnen zetten.<br><br>Voor wie benieuwd is naar Sam en Hester hun gezamenlijke ervaringen: <i>vandaag kun je een kijkje nemen in alle avonturen die ze tot nu toe hebben meegemaakt.</i> Je hoeft alleen maar op Hesters pagina hieronder te klikken om hun gedeelde foto's te bekijken.`,
+            samPhone: true,
+            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://samhoud.getvirtualbrain.com/applications/7ae24ac0-8392-4f1d-91a1-f7a4ec160131" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a></div>`
+        },
         { day: 17, name: "17 December", desc: "Coming soon...", interactive: true },
         {
             day: 18,
@@ -596,13 +604,80 @@ Ho ho hóó, wat een feest! 🎅✨`,
                     // Show corresponding message
                     if (tarotMessageContainer) {
                         tarotMessageContainer.style.display = 'block';
-                        const message = tarotMessageContainer.querySelector(`[data-message="${cardNumber}"]`);
+                        const message = tarotMessageContainer.querySelector(`[data - message="${cardNumber}"]`);
                         if (message) {
                             message.classList.add('active');
                         }
                     }
                 };
             });
+        }
+
+        // Sam's Phone Interaction Logic
+        const samPhoneContainer = document.getElementById('sam-phone-container');
+        if (samPhoneContainer) {
+            if (char.samPhone) {
+                samPhoneContainer.style.display = 'flex'; // Use flex to center
+
+                const phoneWrapper = samPhoneContainer.querySelector('.sam-phone-wrapper');
+                const phoneImg = document.getElementById('sam-phone-img');
+                const resultImg = document.getElementById('sam-result-img');
+
+                // Sequence of images to cycle through
+                const sequenceImages = [
+                    'images/ondersterij1.jpg',
+                    'images/ondersterij2.jpg',
+                    'images/ondersterij3.jpg',
+                    'images/bovensterij1.jpg',
+                    'images/bovensterij2.jpg',
+                    'images/bovensterij3.jpg'
+                ];
+
+                let currentIndex = 0;
+                let isShowingResult = false; // State: false = phone, true = result image
+
+                // Reset state
+                phoneImg.style.display = 'block';
+                resultImg.style.display = 'none';
+                isShowingResult = false;
+                currentIndex = 0;
+
+                // Remove existing click listener to prevent duplicates (simple way: clone node)
+                const newWrapper = phoneWrapper.cloneNode(true);
+                phoneWrapper.parentNode.replaceChild(newWrapper, phoneWrapper);
+
+                // Re-select elements after clone
+                const activeWrapper = samPhoneContainer.querySelector('.sam-phone-wrapper');
+                const activePhoneImg = document.getElementById('sam-phone-img');
+                const activeResultImg = document.getElementById('sam-result-img');
+                const activeCloseBtn = document.getElementById('sam-close-btn');
+
+                // Initial state for close button
+                if (activeCloseBtn) activeCloseBtn.style.display = 'none';
+
+                activeWrapper.addEventListener('click', () => {
+                    if (!isShowingResult) {
+                        // Clicked on Phone -> Show Result
+                        activeResultImg.src = sequenceImages[currentIndex];
+                        activePhoneImg.style.display = 'none';
+                        activeResultImg.style.display = 'block';
+                        if (activeCloseBtn) activeCloseBtn.style.display = 'flex'; // Show close button
+                        isShowingResult = true;
+
+                        // Prepare index for next time
+                        currentIndex = (currentIndex + 1) % sequenceImages.length;
+                    } else {
+                        // Clicked on Result -> Show Phone
+                        activeResultImg.style.display = 'none';
+                        activePhoneImg.style.display = 'block';
+                        if (activeCloseBtn) activeCloseBtn.style.display = 'none'; // Hide close button
+                        isShowingResult = false;
+                    }
+                });
+
+            } else {
+                samPhoneContainer.style.display = 'none';
+            }
         }
 
         // Display closing text if present
@@ -620,9 +695,9 @@ Ho ho hóó, wat een feest! 🎅✨`,
         if (char.video && videoContainer) {
             videoContainer.style.display = 'block';
             videoContainer.innerHTML = `<video class="video-player" controls>
-                <source src="${char.video}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>`;
+        <source src="${char.video}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>`;
         } else if (videoContainer) {
             videoContainer.style.display = 'none';
             videoContainer.innerHTML = '';
