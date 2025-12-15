@@ -622,27 +622,27 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 const phoneWrapper = samPhoneContainer.querySelector('.sam-phone-wrapper');
                 const phoneImg = document.getElementById('sam-phone-img');
                 const resultImg = document.getElementById('sam-result-img');
+                const photoZones = samPhoneContainer.querySelector('.sam-photo-zones');
 
-                // Sequence of images to cycle through
-                const sequenceImages = [
-                    'images/ondersterij1.jpg',
-                    'images/ondersterij2.jpg',
-                    'images/ondersterij3.jpg',
-                    'images/bovensterij1.jpg',
-                    'images/bovensterij2.jpg',
-                    'images/bovensterij3.jpg'
-                ];
+                // Map photo names to image paths
+                const photoMap = {
+                    'bovensterij1': 'images/bovensterij1.jpg',
+                    'bovensterij2': 'images/bovensterij2.jpg',
+                    'bovensterij3': 'images/bovensterij3.jpg',
+                    'ondersterij1': 'images/ondersterij1.jpg',
+                    'ondersterij2': 'images/ondersterij2.jpg',
+                    'ondersterij3': 'images/ondersterij3.jpg'
+                };
 
-                let currentIndex = 0;
-                let isShowingResult = false; // State: false = phone, true = result image
+                let isShowingResult = false;
 
                 // Reset state
                 phoneImg.style.display = 'block';
                 resultImg.style.display = 'none';
+                if (photoZones) photoZones.style.display = 'grid';
                 isShowingResult = false;
-                currentIndex = 0;
 
-                // Remove existing click listener to prevent duplicates (simple way: clone node)
+                // Remove existing click listeners to prevent duplicates (clone node)
                 const newWrapper = phoneWrapper.cloneNode(true);
                 phoneWrapper.parentNode.replaceChild(newWrapper, phoneWrapper);
 
@@ -651,29 +651,52 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 const activePhoneImg = document.getElementById('sam-phone-img');
                 const activeResultImg = document.getElementById('sam-result-img');
                 const activeCloseBtn = document.getElementById('sam-close-btn');
+                const activePhotoZones = activeWrapper.querySelector('.sam-photo-zones');
 
                 // Initial state for close button
                 if (activeCloseBtn) activeCloseBtn.style.display = 'none';
 
-                activeWrapper.addEventListener('click', () => {
-                    if (!isShowingResult) {
-                        // Clicked on Phone -> Show Result
-                        activeResultImg.src = sequenceImages[currentIndex];
-                        activePhoneImg.style.display = 'none';
-                        activeResultImg.style.display = 'block';
-                        if (activeCloseBtn) activeCloseBtn.style.display = 'flex'; // Show close button
-                        isShowingResult = true;
+                // Add click handlers to each photo zone
+                const zones = activeWrapper.querySelectorAll('.photo-zone');
+                zones.forEach(zone => {
+                    zone.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (!isShowingResult) {
+                            const photoName = zone.getAttribute('data-photo');
+                            const imagePath = photoMap[photoName];
+                            if (imagePath) {
+                                activeResultImg.src = imagePath;
+                                activePhoneImg.style.display = 'none';
+                                activeResultImg.style.display = 'block';
+                                if (activePhotoZones) activePhotoZones.style.display = 'none';
+                                if (activeCloseBtn) activeCloseBtn.style.display = 'flex';
+                                isShowingResult = true;
+                            }
+                        }
+                    });
+                });
 
-                        // Prepare index for next time
-                        currentIndex = (currentIndex + 1) % sequenceImages.length;
-                    } else {
-                        // Clicked on Result -> Show Phone
+                // Click on result image or close button to go back
+                activeResultImg.addEventListener('click', () => {
+                    if (isShowingResult) {
                         activeResultImg.style.display = 'none';
                         activePhoneImg.style.display = 'block';
-                        if (activeCloseBtn) activeCloseBtn.style.display = 'none'; // Hide close button
+                        if (activePhotoZones) activePhotoZones.style.display = 'grid';
+                        if (activeCloseBtn) activeCloseBtn.style.display = 'none';
                         isShowingResult = false;
                     }
                 });
+
+                if (activeCloseBtn) {
+                    activeCloseBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        activeResultImg.style.display = 'none';
+                        activePhoneImg.style.display = 'block';
+                        if (activePhotoZones) activePhotoZones.style.display = 'grid';
+                        activeCloseBtn.style.display = 'none';
+                        isShowingResult = false;
+                    });
+                }
 
             } else {
                 samPhoneContainer.style.display = 'none';
