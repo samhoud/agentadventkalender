@@ -1616,8 +1616,7 @@ body {
 
 .sam-phone-wrapper {
     position: relative;
-    max-width: 180px;
-    width: 35%;
+    width: 50%;
     cursor: pointer;
     transition: transform 0.2s;
 }
