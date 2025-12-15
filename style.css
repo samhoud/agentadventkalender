@@ -1629,3 +1629,25 @@ body {
     width: 100%;
     height: auto;
     border-radius: 20px;
+}
+
+.sam-photo-zones {
+    position: absolute;
+    top: 42%;
+    left: 4%;
+    right: 4%;
+    bottom: 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.photo-zone {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.photo-zone:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
