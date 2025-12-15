@@ -1614,12 +1614,12 @@ body {
     margin-top: 1.5rem;
 }
 
-.sam-phone-hint {
+.sam-phone-cta {
     text-align: center;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--helio-cosmos);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 .sam-phone-wrapper {
