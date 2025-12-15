@@ -656,6 +656,9 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 // Initial state for close button
                 if (activeCloseBtn) activeCloseBtn.style.display = 'none';
 
+                // Get the modal content element for scroll preservation
+                const modalContent = document.querySelector('.modal-content');
+
                 // Add click handlers to each photo zone
                 const zones = activeWrapper.querySelectorAll('.photo-zone');
                 zones.forEach(zone => {
@@ -666,19 +669,26 @@ Ho ho hóó, wat een feest! 🎅✨`,
                             const photoName = zone.getAttribute('data-photo');
                             const imagePath = photoMap[photoName];
                             if (imagePath) {
+                                const scrollPos = modalContent ? modalContent.scrollTop : 0;
                                 activeResultImg.src = imagePath;
                                 activePhoneImg.style.display = 'none';
                                 activeResultImg.style.display = 'block';
                                 if (activePhotoZones) activePhotoZones.style.display = 'none';
                                 if (activeCloseBtn) activeCloseBtn.style.display = 'flex';
                                 isShowingResult = true;
+                                if (modalContent) {
+                                    requestAnimationFrame(() => {
+                                        modalContent.scrollTop = scrollPos;
+                                    });
+                                }
                             }
                         }
                     });
                 });
 
                 // Click on result image or close button to go back
-                activeResultImg.addEventListener('click', () => {
+                activeResultImg.addEventListener('click', (e) => {
+                    e.preventDefault();
                     if (isShowingResult) {
                         activeResultImg.style.display = 'none';
                         activePhoneImg.style.display = 'block';
@@ -690,6 +700,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
 
                 if (activeCloseBtn) {
                     activeCloseBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         activeResultImg.style.display = 'none';
                         activePhoneImg.style.display = 'block';
