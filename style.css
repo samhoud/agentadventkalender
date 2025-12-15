@@ -1629,6 +1629,24 @@ body {
     width: 100%;
     height: auto;
     border-radius: 20px;
+    display: block;
+}
+
+#sam-result-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#sam-phone-img {
+    visibility: visible;
+}
+
+#sam-phone-img.hidden-for-result {
+    visibility: hidden;
 }
 
 .sam-photo-zones {

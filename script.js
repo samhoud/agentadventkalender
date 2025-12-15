@@ -636,8 +636,8 @@ Ho ho hóó, wat een feest! 🎅✨`,
 
                 let isShowingResult = false;
 
-                // Reset state
-                phoneImg.style.display = 'block';
+                // Reset state - use visibility for phone to maintain layout
+                phoneImg.classList.remove('hidden-for-result');
                 resultImg.style.display = 'none';
                 if (photoZones) photoZones.style.display = 'grid';
                 isShowingResult = false;
@@ -656,9 +656,6 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 // Initial state for close button
                 if (activeCloseBtn) activeCloseBtn.style.display = 'none';
 
-                // Get the modal content element for scroll preservation
-                const modalContent = document.querySelector('.modal-content');
-
                 // Add click handlers to each photo zone
                 const zones = activeWrapper.querySelectorAll('.photo-zone');
                 zones.forEach(zone => {
@@ -669,18 +666,12 @@ Ho ho hóó, wat een feest! 🎅✨`,
                             const photoName = zone.getAttribute('data-photo');
                             const imagePath = photoMap[photoName];
                             if (imagePath) {
-                                const scrollPos = modalContent ? modalContent.scrollTop : 0;
                                 activeResultImg.src = imagePath;
-                                activePhoneImg.style.display = 'none';
+                                activePhoneImg.classList.add('hidden-for-result');
                                 activeResultImg.style.display = 'block';
                                 if (activePhotoZones) activePhotoZones.style.display = 'none';
                                 if (activeCloseBtn) activeCloseBtn.style.display = 'flex';
                                 isShowingResult = true;
-                                if (modalContent) {
-                                    requestAnimationFrame(() => {
-                                        modalContent.scrollTop = scrollPos;
-                                    });
-                                }
                             }
                         }
                     });
@@ -691,7 +682,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
                     e.preventDefault();
                     if (isShowingResult) {
                         activeResultImg.style.display = 'none';
-                        activePhoneImg.style.display = 'block';
+                        activePhoneImg.classList.remove('hidden-for-result');
                         if (activePhotoZones) activePhotoZones.style.display = 'grid';
                         if (activeCloseBtn) activeCloseBtn.style.display = 'none';
                         isShowingResult = false;
@@ -703,7 +694,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
                         e.preventDefault();
                         e.stopPropagation();
                         activeResultImg.style.display = 'none';
-                        activePhoneImg.style.display = 'block';
+                        activePhoneImg.classList.remove('hidden-for-result');
                         if (activePhotoZones) activePhotoZones.style.display = 'grid';
                         activeCloseBtn.style.display = 'none';
                         isShowingResult = false;
