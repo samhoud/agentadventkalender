@@ -227,7 +227,7 @@ Je kan haar terug vinden in Virtual Brain via deze link:
         },
         {
             day: 18,
-            name: "Throwback Tuesday",
+            name: "Throwback Thursday",
             interactive: true,
             desc: `Ho ho hóó lieve consultantjes van &samhoud!
 Zelfs Kerstmis is dit jaar een stuk efficiënter geworden sinds de komst van jullie slimme AI agents. Zo efficiënt zelfs, dat Throwback Thursday twee dagen eerder uitgevoerd kan worden—jawel hoor—op Throwback Tuesday!
@@ -236,11 +236,21 @@ Dus leun lekker achterover, neem een warme chocolademelk, en geniet van deze pra
 
 Ho ho hóó, wat een feest! 🎅✨`,
             images: [
-                'images/day2_1.jpg',
-                'images/day2_2.jpg',
-                'images/day2_3.jpg',
-                'images/day2_4.jpg',
-                'images/day2_5.jpg'
+                'images/dag18_1.jpg',
+                'images/dag18_2.jpg',
+                'images/dag18_4.jpg',
+                'images/dag18_5.jpg',
+                'images/dag18_6.jpg',
+                'images/dag18_7.jpg',
+                'images/dag18_8.jpg',
+                'images/dag18_9.jpg',
+                'images/dag18_3.jpg',
+                'images/dag18_10.jpg',
+                'images/dag18_11.jpg',
+                'images/dag18_12.jpg',
+                'images/dag18_13.jpg',
+                'images/dag18_14.jpg',
+                'images/dag18_15.jpg'
             ]
         },
         { day: 19, name: "19 December", desc: "Coming soon...", interactive: true },

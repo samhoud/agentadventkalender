@@ -476,8 +476,10 @@ body {
 .carousel-slide {
     display: none;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 350px;
+    object-fit: contain;
+    background-color: #000;
+    /* Dark background for letterboxing */
     border-radius: 8px;
 }
 
