@@ -216,7 +216,15 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             samPhone: true,
             closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://samhoud.getvirtualbrain.com/applications/7ae24ac0-8392-4f1d-91a1-f7a4ec160131" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a></div>`
         },
-        { day: 17, name: "17 December", desc: "Coming soon...", interactive: true },
+        {
+            day: 17,
+            name: "Cees de Casebot",
+            interactive: true,
+            image: "images/Cees de casebot - pen.jpg",
+            desc: `Hij is terug van weggeweest. Met een kleine naamswijziging (met een c, inderdaad) en scherper dan ooit: <b>Ceesbot</b>. Na een periode achter de schermen is hij weer beschikbaar om teams te helpen bij het netjes afronden van projecten. Minder gedoe, meer structuur — precies op het moment dat je het nodig hebt.<br><br><b>Wat doet Ceesbot ook alweer?</b><br>Ceesbot helpt je na afronding van een project om snel tot een heldere en gestructureerde klantcase te komen. Je start met een kort gesprek in Teams, plakt het transcript in Ceesbot en genereert direct een eerste versie. Samen met je team werk je deze verder uit, scherp je de tone of voice aan en maak je eenvoudig een verkorte of Engelse variant. De projectleider blijft eindverantwoordelijk, met Julie als aanspreekpunt voor het proces.<br><br>En voor die momenten waarop je blijft hangen tussen "waar beginnen we?" en "hoe ronden we dit goed af?" is er Ceesbot. Niet voor noodgevallen of groot alarm, maar juist voor dat herkenbare laatste stuk: het project is klaar, alleen de klantcase nog. Eén seintje, één transcript, en Ceesbot helpt je gestructureerd verder — zonder dat het groter of zwaarder wordt dan nodig.`,
+            video: "images/Arnaud.mp4",
+            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://teams.microsoft.com/l/app/82a19a1f-b57a-4412-a7c7-ca6c23f6d4a5?source=app-header-share-entrypoint" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Ceesbot</a></div>`
+        },
         {
             day: 18,
             name: "Throwback Tuesday",
