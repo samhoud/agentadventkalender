@@ -1,51 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const passwordOverlay = document.getElementById('password-overlay');
-    const passwordInput = document.getElementById('password-input');
-    const passwordSubmit = document.getElementById('password-submit');
-    const passwordError = document.getElementById('password-error');
-    const mainContent = document.getElementById('main-content');
+document.addEventListener("DOMContentLoaded", () => {
+    const passwordOverlay = document.getElementById("password-overlay");
+    const passwordInput = document.getElementById("password-input");
+    const passwordSubmit = document.getElementById("password-submit");
+    const passwordError = document.getElementById("password-error");
+    const mainContent = document.getElementById("main-content");
 
-    const CORRECT_PASSWORD = 'kerst2025';
+    const CORRECT_PASSWORD = "kerst2025";
 
     function checkPassword() {
         const enteredPassword = passwordInput.value;
 
         if (enteredPassword === CORRECT_PASSWORD) {
-            passwordOverlay.style.display = 'none';
-            mainContent.style.display = 'block';
-            passwordError.classList.add('hidden');
+            passwordOverlay.style.display = "none";
+            mainContent.style.display = "block";
+            passwordError.classList.add("hidden");
         } else {
-            passwordError.classList.remove('hidden');
-            passwordInput.value = '';
+            passwordError.classList.remove("hidden");
+            passwordInput.value = "";
             passwordInput.focus();
         }
     }
 
     if (passwordSubmit) {
-        passwordSubmit.addEventListener('click', checkPassword);
+        passwordSubmit.addEventListener("click", checkPassword);
     }
 
     if (passwordInput) {
-        passwordInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
+        passwordInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
                 checkPassword();
             }
         });
         passwordInput.focus();
     }
 
-    const treeContainer = document.getElementById('tree-container');
-    const modal = document.getElementById('modal');
-    const closeBtn = document.getElementById('close-btn');
-    const charNameEl = document.getElementById('char-name');
-    const charDayEl = document.getElementById('char-day');
-    const charDescEl = document.getElementById('char-desc');
-    const snowContainer = document.getElementById('snow-container');
+    const treeContainer = document.getElementById("tree-container");
+    const modal = document.getElementById("modal");
+    const closeBtn = document.getElementById("close-btn");
+    const charNameEl = document.getElementById("char-name");
+    const charDayEl = document.getElementById("char-day");
+    const charDescEl = document.getElementById("char-desc");
+    const snowContainer = document.getElementById("snow-container");
 
     // All days of December (1-31), only days 8-12 and 15-19 are interactive
     const characters = [
         {
-            type: 'star',
+            type: "star",
             name: "Een brief van de Kerstman",
             desc: `Ho ho hóó lieve mensen van &samhoud!
 De Kerstman heeft zich dit jaar eens niet alleen in zijn slee verstopt, maar is gewoon bij jullie op kantoor langsgekomen. En wat ik daar zag… tjongejonge… wat zijn jullie allemaal brave, lieve consultantjes geweest dit jaar! Dat verdient natuurlijk een flinke beloning.
@@ -61,7 +61,7 @@ Tussen al het slidesbouwen door: probeer mij maar eens te vinden. Wie mij ontdek
 
 Tot heel snel weer, lieve consultantjes.
 Warme groetjes,
-de Kerstman 🎅✨`
+de Kerstman 🎅✨`,
         },
         { day: 1, name: "1 December", desc: "", interactive: false },
         { day: 2, name: "2 December", desc: "", interactive: false },
@@ -75,7 +75,7 @@ de Kerstman 🎅✨`
             name: "Eerste boodschap van de Kerstman",
             interactive: true,
             desc: "",
-            video: "images/Santa's Digitale Kalender.mp4"
+            video: "images/Santa's Digitale Kalender.mp4",
         },
         {
             day: 9,
@@ -99,12 +99,12 @@ Aan de slag? Check de Sales Super Prompt op SharePoint: <a href="https://samhoud
 
 <i>Maar eerst: wil je weten hoe de toekomst van &samhoud eruitziet met én zonder Syl?</i>`,
             flipCards: {
-                withoutAi: 'images/day9_future_ai.jpg',
-                withAi: 'images/day9_future_no_ai.jpg',
-                labelWithout: 'Toekomst zonder Syl',
-                labelWith: 'Toekomst met Syl'
+                withoutAi: "images/day9_future_ai.jpg",
+                withAi: "images/day9_future_no_ai.jpg",
+                labelWithout: "Toekomst zonder Syl",
+                labelWith: "Toekomst met Syl",
             },
-            closingText: "Jouw keuze. Welke &samhoud kies jij?"
+            closingText: "Jouw keuze. Welke &samhoud kies jij?",
         },
         {
             day: 10,
@@ -122,7 +122,7 @@ Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback n
 
 <i>Wil je alvast een voorproefje van Fenna's skills? Klik op de knop en krijg een compliment - voor jezelf, of als inspiratie voor de feedback die je gaat schrijven.</i>`,
             compliments: true,
-            closingText: `Direct aan de slag met Fenna? Kijk in je copilot app of klik op deze link: <a href="https://teams.microsoft.com/l/app/2f02f6b0-f88f-45d1-88b7-7393e8a94f7a?source=app-header-share-entrypoint" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Fenna de FeedbackFixer</a>`
+            closingText: `Direct aan de slag met Fenna? Kijk in je copilot app of klik op deze link: <a href="https://teams.microsoft.com/l/app/2f02f6b0-f88f-45d1-88b7-7393e8a94f7a?source=app-header-share-entrypoint" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Fenna de FeedbackFixer</a>`,
         },
         {
             day: 11,
@@ -159,7 +159,7 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
 </ul>
 <i>Winnende naam krijgt een flesje bubbels én een plekje op SharePoint.</i>`,
             forms: true,
-            closingText: `Ga snel naar SharePoint om haar nog beter te leren kennen: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Intana---Interview-Analyser.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Intana - Interview Analyser</a>`
+            closingText: `Ga snel naar SharePoint om haar nog beter te leren kennen: <a href="https://samhoud1.sharepoint.com/sites/DATATOOLS-PORTAL/SitePages/Intana---Interview-Analyser.aspx" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Intana - Interview Analyser</a>`,
         },
         {
             day: 12,
@@ -175,7 +175,7 @@ Denk aan bijvoorbeeld: <i>"Hoe maak ik een nieuwe groep aan in Teams?"</i> of <i
 Kortom: alles wat nu nog te vaak begint met <i>"Hee Sanne, heb je even…?"</i> is voortaan <b>"Hee Olivia, heb je even...?"</b>
 
 Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan beantwoorden, heeft ze ook een <b>direct lijntje met de toekomst</b>. Durf jij het aan? <i>Trek een van de Tarotkaarten en ontdek wat er op het punt staat te veranderen.</i>`,
-            tarotCards: true
+            tarotCards: true,
         },
         { day: 13, name: "13 December", desc: "", interactive: false },
         { day: 14, name: "14 December", desc: "", interactive: false },
@@ -205,7 +205,7 @@ Je kan haar terug vinden in Virtual Brain via deze link:
 
 <div style="text-align: center; margin-top: 1.5rem;">
     <a href="https://samhoud.getvirtualbrain.com/applications/2a9eb051-4b92-4263-bfa3-936cf71966b0" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a>
-</div>`
+</div>`,
         },
         {
             day: 16,
@@ -214,7 +214,7 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             image: "images/Sam de Sessiebouwer.jpg",
             desc: `<b>Even opfrissen: wat doet Sam?</b><br>Sam de Sessiebouwer helpt je om snel een eerste concept van een sessieprogramma te maken. Upload een transcriptbriefing met doelen, doelgroep en context, en Sam bouwt een volledig programma: interventies, materialenlijst, actielijst. Alles om meteen aan de slag te kunnen.<br><br><b>Maar de echte vraag: hoe weet Sam welke interventies werken?</b><br>Daar hebben Sam en zijn agent owner Hester onderzoek naar gedaan. Een intensieve research trip. Want échte doorbraken creëren? Dat vraagt om diepgaand onderzoek. En ze hebben het grondig aangepakt.<br><br><i>Wil jij ook weten welke lessen zij hebben geleerd van een ijsbad? Of wat de vergelijking is tussen verandering leiden en zuurdesem bakken?</i><br><br>Alle antwoorden staan op hun Instagram.`,
             samPhone: true,
-            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://samhoud.getvirtualbrain.com/applications/7ae24ac0-8392-4f1d-91a1-f7a4ec160131" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a></div>`
+            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://samhoud.getvirtualbrain.com/applications/7ae24ac0-8392-4f1d-91a1-f7a4ec160131" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Virtual Brain</a></div>`,
         },
         {
             day: 17,
@@ -222,8 +222,8 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             interactive: true,
             image: "images/Cees de casebot - pen.jpg",
             desc: `Hij is terug van weggeweest. Met een kleine naamswijziging (met een c, inderdaad) en scherper dan ooit: <b>Ceesbot</b>. Na een periode achter de schermen is hij weer beschikbaar om teams te helpen bij het netjes afronden van projecten. Minder gedoe, meer structuur — precies op het moment dat je het nodig hebt.<br><br><b>Wat doet Ceesbot ook alweer?</b><br>Ceesbot helpt je na afronding van een project om snel tot een heldere en gestructureerde klantcase te komen. Je start met een kort gesprek in Teams, plakt het transcript in Ceesbot en genereert direct een eerste versie. Samen met je team werk je deze verder uit, scherp je de tone of voice aan en maak je eenvoudig een verkorte of Engelse variant. De projectleider blijft eindverantwoordelijk, met Julie als aanspreekpunt voor het proces.<br><br>En voor die momenten waarop je blijft hangen tussen "waar beginnen we?" en "hoe ronden we dit goed af?" is er Ceesbot. Niet voor noodgevallen of groot alarm, maar juist voor dat herkenbare laatste stuk: het project is klaar, alleen de klantcase nog. Eén seintje, één transcript, en Ceesbot helpt je gestructureerd verder — zonder dat het groter of zwaarder wordt dan nodig.`,
-            video: "images/Arnaud.mp4",
-            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://teams.microsoft.com/l/app/82a19a1f-b57a-4412-a7c7-ca6c23f6d4a5?source=app-header-share-entrypoint" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Ceesbot</a></div>`
+            video: "images/casebot-advent-klein.mp4",
+            closingText: `<div style="text-align: center; margin-top: 1.5rem;"><a href="https://teams.microsoft.com/l/app/82a19a1f-b57a-4412-a7c7-ca6c23f6d4a5?source=app-header-share-entrypoint" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean)); color: var(--infinite-ivory); text-decoration: none; border-radius: 50px; font-weight: bold; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">Naar Ceesbot</a></div>`,
         },
         {
             day: 18,
@@ -236,30 +236,35 @@ Dus leun lekker achterover, neem een warme chocolademelk, en geniet van deze pra
 
 Ho ho hóó, wat een feest! 🎅✨`,
             images: [
-                'images/dag18_1.jpg',
-                'images/dag18_2.jpg',
-                'images/dag18_4.jpg',
-                'images/dag18_5.jpg',
-                'images/dag18_6.jpg',
-                'images/dag18_7.jpg',
-                'images/dag18_8.jpg',
-                'images/dag18_9.jpg',
-                'images/dag18_3.jpg',
-                'images/dag18_10.jpg',
-                'images/dag18_11.jpg',
-                'images/dag18_12.jpg',
-                'images/dag18_13.jpg',
-                'images/dag18_14.jpg',
-                'images/dag18_15.jpg'
-            ]
+                "images/dag18_1.jpg",
+                "images/dag18_2.jpg",
+                "images/dag18_4.jpg",
+                "images/dag18_5.jpg",
+                "images/dag18_6.jpg",
+                "images/dag18_7.jpg",
+                "images/dag18_8.jpg",
+                "images/dag18_9.jpg",
+                "images/dag18_3.jpg",
+                "images/dag18_10.jpg",
+                "images/dag18_11.jpg",
+                "images/dag18_12.jpg",
+                "images/dag18_13.jpg",
+                "images/dag18_14.jpg",
+                "images/dag18_15.jpg",
+            ],
         },
-        { day: 19, name: "19 December", desc: "Coming soon...", interactive: true },
+        {
+            day: 19,
+            name: "19 December",
+            desc: "Coming soon...",
+            interactive: true,
+        },
         { day: 20, name: "20 December", desc: "", interactive: false },
         { day: 21, name: "21 December", desc: "", interactive: false },
         { day: 22, name: "22 December", desc: "", interactive: false },
         { day: 23, name: "23 December", desc: "", interactive: false },
         { day: 24, name: "24 December", desc: "", interactive: false },
-        { day: 25, name: "25 December", desc: "", interactive: false }
+        { day: 25, name: "25 December", desc: "", interactive: false },
     ];
 
     const compliments = [
@@ -270,34 +275,47 @@ Ho ho hóó, wat een feest! 🎅✨`,
         "Jij bent inmiddels zo'n goede proces begeleider, dat je de blauwe bal weet te gooien zonder dat er gewonden raken",
         "Je bent de gouden standaard voor slide-opmaak; jouw consistentie in uitlijning is een kerstwonder op zich",
         "Jouw werk ethiek is sterker dan de meeste familiebanden tijdens kerst",
-        "Met jouw projectplanning zou zelfs de Kerstman zijn cadeautjes efficiënter kunnen rondbrengen"
+        "Met jouw projectplanning zou zelfs de Kerstman zijn cadeautjes efficiënter kunnen rondbrengen",
     ];
 
     function createSnow() {
         if (!snowContainer) return;
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.innerHTML = '❄';
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.innerHTML = "❄";
+        snowflake.style.left = Math.random() * 100 + "vw";
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
         snowflake.style.opacity = Math.random() * 0.5;
-        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+        snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
 
         snowContainer.appendChild(snowflake);
-        setTimeout(() => { snowflake.remove(); }, 5000);
+        setTimeout(() => {
+            snowflake.remove();
+        }, 5000);
     }
     setInterval(createSnow, 100);
 
     function createBackgroundIcons() {
-        const icons = ['🎄', '🎅', '🦌', '🎁', '🔔', '🕯️', '🍪', '⛄', '❄️', '🎀'];
+        const icons = [
+            "🎄",
+            "🎅",
+            "🦌",
+            "🎁",
+            "🔔",
+            "🕯️",
+            "🍪",
+            "⛄",
+            "❄️",
+            "🎀",
+        ];
         const numIcons = 15;
 
         for (let i = 0; i < numIcons; i++) {
-            const icon = document.createElement('div');
-            icon.classList.add('bg-icon');
+            const icon = document.createElement("div");
+            icon.classList.add("bg-icon");
             icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-            icon.style.top = Math.random() * 100 + 'vh';
-            icon.style.left = Math.random() * 100 + 'vw';
+            icon.style.top = Math.random() * 100 + "vh";
+            icon.style.left = Math.random() * 100 + "vw";
             const size = Math.random() * 3 + 2;
             icon.style.fontSize = `${size}rem`;
             icon.style.animationDelay = `${Math.random() * 5}s`;
@@ -310,7 +328,7 @@ Ho ho hóó, wat een feest! 🎅✨`,
     // Check if developer mode is enabled via URL parameter
     function isDevMode() {
         const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('dev') === 'true';
+        return urlParams.get("dev") === "true";
     }
 
     function isDayUnlocked(dayNumber) {
@@ -326,7 +344,10 @@ Ho ho hóó, wat een feest! 🎅✨`,
         const currentDay = now.getDate();
 
         // Check if we're in December 2025 or later
-        if (currentYear > 2025 || (currentYear === 2025 && currentMonth === 11)) {
+        if (
+            currentYear > 2025 ||
+            (currentYear === 2025 && currentMonth === 11)
+        ) {
             // We're in December 2025 or later
             // Day is unlocked if the current date is >= the day number
             if (currentYear === 2025 && currentMonth === 11) {
@@ -346,9 +367,11 @@ Ho ho hóó, wat een feest! 🎅✨`,
             return;
         }
 
-        if (box.classList.contains('ball--locked')) {
-            box.classList.add('shake');
-            setTimeout(() => { box.classList.remove('shake'); }, 500);
+        if (box.classList.contains("ball--locked")) {
+            box.classList.add("shake");
+            setTimeout(() => {
+                box.classList.remove("shake");
+            }, 500);
             return;
         }
         openModal(char);
@@ -360,82 +383,110 @@ Ho ho hóó, wat een feest! 🎅✨`,
     // style: 'dark' | 'light' (for balls)
     // day: number (optional, for dark balls and trunk)
     const treeLayout = [
-        [{ type: 'star' }], // Row 0
-        [{ type: 'ball', style: 'dark', day: 8 }], // Row 1
-        [{ type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }], // Row 2
-        [{ type: 'ball', style: 'dark', day: 9 }, { type: 'ball', style: 'dark', day: 10 }, { type: 'ball', style: 'dark', day: 11 }], // Row 3
-        [{ type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }], // Row 4
-        [{ type: 'ball', style: 'dark', day: 12 }, { type: 'ball', style: 'dark', day: 15 }, { type: 'ball', style: 'dark', day: 16 }, { type: 'ball', style: 'dark', day: 17 }, { type: 'ball', style: 'dark', day: 18 }], // Row 5
-        [{ type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }, { type: 'ball', style: 'light' }], // Row 6
-        [{ type: 'trunk', day: 19 }] // Row 7
+        [{ type: "star" }], // Row 0
+        [{ type: "ball", style: "dark", day: 8 }], // Row 1
+        [
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+        ], // Row 2
+        [
+            { type: "ball", style: "dark", day: 9 },
+            { type: "ball", style: "dark", day: 10 },
+            { type: "ball", style: "dark", day: 11 },
+        ], // Row 3
+        [
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+        ], // Row 4
+        [
+            { type: "ball", style: "dark", day: 12 },
+            { type: "ball", style: "dark", day: 15 },
+            { type: "ball", style: "dark", day: 16 },
+            { type: "ball", style: "dark", day: 17 },
+            { type: "ball", style: "dark", day: 18 },
+        ], // Row 5
+        [
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+            { type: "ball", style: "light" },
+        ], // Row 6
+        [{ type: "trunk", day: 19 }], // Row 7
     ];
 
     if (treeContainer) {
         treeLayout.forEach((rowItems, rowIndex) => {
-            const row = document.createElement('div');
-            row.classList.add('tree-row');
+            const row = document.createElement("div");
+            row.classList.add("tree-row");
 
-            rowItems.forEach(item => {
-                let box = document.createElement('div');
+            rowItems.forEach((item) => {
+                let box = document.createElement("div");
 
-                if (item.type === 'star') {
-                    box.classList.add('day-box', 'star-box');
+                if (item.type === "star") {
+                    box.classList.add("day-box", "star-box");
                     box.innerHTML = `<div class="star-shape">★</div>`;
 
                     // Find star character data (usually index 0 or find by type)
-                    const starChar = characters.find(c => c.type === 'star');
+                    const starChar = characters.find((c) => c.type === "star");
                     if (starChar) {
-                        box.addEventListener('click', () => {
-                            const sleighImg = document.getElementById('sleigh-img');
+                        box.addEventListener("click", () => {
+                            const sleighImg =
+                                document.getElementById("sleigh-img");
                             if (sleighImg) {
                                 // Remove animation class to reset
-                                sleighImg.classList.remove('sleigh-animate');
+                                sleighImg.classList.remove("sleigh-animate");
                                 // Force reflow to restart animation
                                 void sleighImg.offsetWidth;
                                 // Add animation class again
-                                sleighImg.classList.add('sleigh-animate');
+                                sleighImg.classList.add("sleigh-animate");
                             }
                         });
                     }
-
-                } else if (item.type === 'trunk') {
-                    box.classList.add('tree-trunk');
+                } else if (item.type === "trunk") {
+                    box.classList.add("tree-trunk");
                     box.textContent = item.day;
 
-                    const char = characters.find(c => c.day === item.day);
+                    const char = characters.find((c) => c.day === item.day);
                     if (char) {
                         if (isDayUnlocked(char.day)) {
                             // Trunk is always unlocked in this design context or follows same rules
-                            box.classList.add('ball--unlocked');
+                            box.classList.add("ball--unlocked");
                         } else {
-                            box.classList.add('ball--locked');
+                            box.classList.add("ball--locked");
                         }
-                        box.addEventListener('click', () => handleDayClick(box, char));
+                        box.addEventListener("click", () =>
+                            handleDayClick(box, char),
+                        );
                     }
+                } else if (item.type === "ball") {
+                    box.classList.add("day-box");
 
-                } else if (item.type === 'ball') {
-                    box.classList.add('day-box');
-
-                    if (item.style === 'light') {
-                        box.classList.add('ball--light');
+                    if (item.style === "light") {
+                        box.classList.add("ball--light");
                         // Light balls are decorative/empty
                     } else {
-                        box.classList.add('ball--dark');
+                        box.classList.add("ball--dark");
                         box.textContent = item.day;
 
-                        const char = characters.find(c => c.day === item.day);
+                        const char = characters.find((c) => c.day === item.day);
                         if (char) {
                             if (!char.interactive) {
-                                box.classList.add('ball--non-interactive');
+                                box.classList.add("ball--non-interactive");
                             }
 
                             if (isDayUnlocked(char.day)) {
-                                box.classList.add('ball--unlocked');
+                                box.classList.add("ball--unlocked");
                             } else {
-                                box.classList.add('ball--locked');
+                                box.classList.add("ball--locked");
                             }
 
-                            box.addEventListener('click', () => handleDayClick(box, char));
+                            box.addEventListener("click", () =>
+                                handleDayClick(box, char),
+                            );
                         }
                     }
                 }
@@ -457,42 +508,46 @@ Ho ho hóó, wat een feest! 🎅✨`,
         let dots = document.getElementsByClassName("dot");
         if (!slides.length) return;
 
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-            slides[i].classList.remove('active');
+            slides[i].classList.remove("active");
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         if (slides.length > 0) {
             slides[slideIndex - 1].style.display = "block";
-            slides[slideIndex - 1].classList.add('active');
+            slides[slideIndex - 1].classList.add("active");
             if (dots.length > 0) dots[slideIndex - 1].className += " active";
         }
     }
 
     function plusSlides(n) {
-        showSlides(slideIndex += n);
+        showSlides((slideIndex += n));
     }
 
     function currentSlide(n) {
-        showSlides(slideIndex = n);
+        showSlides((slideIndex = n));
     }
 
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
 
-    if (prevBtn) prevBtn.addEventListener('click', () => plusSlides(-1));
-    if (nextBtn) nextBtn.addEventListener('click', () => plusSlides(1));
+    if (prevBtn) prevBtn.addEventListener("click", () => plusSlides(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => plusSlides(1));
 
-    const complimentContainer = document.getElementById('compliment-container');
-    const complimentBtn = document.getElementById('compliment-btn');
-    const complimentText = document.getElementById('compliment-text');
+    const complimentContainer = document.getElementById("compliment-container");
+    const complimentBtn = document.getElementById("compliment-btn");
+    const complimentText = document.getElementById("compliment-text");
 
     if (complimentBtn) {
-        complimentBtn.addEventListener('click', () => {
+        complimentBtn.addEventListener("click", () => {
             const randomIndex = Math.floor(Math.random() * compliments.length);
             const randomCompliment = compliments[randomIndex];
             complimentText.textContent = randomCompliment;
@@ -507,44 +562,50 @@ Ho ho hóó, wat een feest! 🎅✨`,
         // Always use innerHTML to support formatting tags like <b>, <i>, <ul>
         charDescEl.innerHTML = char.desc;
 
-        const carouselContainer = document.getElementById('carousel-container');
-        const carouselSlides = document.getElementById('carousel-slides');
-        const carouselDots = document.getElementById('carousel-dots');
-        const formsContainer = document.getElementById('forms-container');
-        const flipCardsContainer = document.getElementById('flip-cards-container');
-        const tarotCardsContainer = document.getElementById('tarot-cards-container');
-        const imageContainer = document.getElementById('image-container');
-        const closingTextContainer = document.getElementById('closing-text-container');
+        const carouselContainer = document.getElementById("carousel-container");
+        const carouselSlides = document.getElementById("carousel-slides");
+        const carouselDots = document.getElementById("carousel-dots");
+        const formsContainer = document.getElementById("forms-container");
+        const flipCardsContainer = document.getElementById(
+            "flip-cards-container",
+        );
+        const tarotCardsContainer = document.getElementById(
+            "tarot-cards-container",
+        );
+        const imageContainer = document.getElementById("image-container");
+        const closingTextContainer = document.getElementById(
+            "closing-text-container",
+        );
 
-        if (carouselContainer) carouselContainer.style.display = 'none';
-        if (formsContainer) formsContainer.style.display = 'none';
-        if (complimentContainer) complimentContainer.style.display = 'none';
-        if (flipCardsContainer) flipCardsContainer.style.display = 'none';
-        if (tarotCardsContainer) tarotCardsContainer.style.display = 'none';
-        if (imageContainer) imageContainer.style.display = 'none';
-        if (closingTextContainer) closingTextContainer.style.display = 'none';
-        if (complimentText) complimentText.textContent = '';
+        if (carouselContainer) carouselContainer.style.display = "none";
+        if (formsContainer) formsContainer.style.display = "none";
+        if (complimentContainer) complimentContainer.style.display = "none";
+        if (flipCardsContainer) flipCardsContainer.style.display = "none";
+        if (tarotCardsContainer) tarotCardsContainer.style.display = "none";
+        if (imageContainer) imageContainer.style.display = "none";
+        if (closingTextContainer) closingTextContainer.style.display = "none";
+        if (complimentText) complimentText.textContent = "";
 
         // Display single image if present
         if (char.image && imageContainer) {
-            imageContainer.style.display = 'block';
+            imageContainer.style.display = "block";
             imageContainer.innerHTML = `<img src="${char.image}" alt="${char.name}" class="character-image">`;
         }
 
         if (char.images && char.images.length > 0 && carouselContainer) {
-            carouselContainer.style.display = 'block';
-            carouselSlides.innerHTML = '';
-            carouselDots.innerHTML = '';
+            carouselContainer.style.display = "block";
+            carouselSlides.innerHTML = "";
+            carouselDots.innerHTML = "";
 
             char.images.forEach((imgSrc, index) => {
-                const slide = document.createElement('img');
+                const slide = document.createElement("img");
                 slide.src = imgSrc;
-                slide.classList.add('carousel-slide');
+                slide.classList.add("carousel-slide");
                 carouselSlides.appendChild(slide);
 
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                dot.addEventListener('click', () => currentSlide(index + 1));
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                dot.addEventListener("click", () => currentSlide(index + 1));
                 carouselDots.appendChild(dot);
             });
 
@@ -553,19 +614,23 @@ Ho ho hóó, wat een feest! 🎅✨`,
         }
 
         if (char.forms && formsContainer) {
-            formsContainer.style.display = 'block';
+            formsContainer.style.display = "block";
         }
 
         if (char.compliments && complimentContainer) {
-            complimentContainer.style.display = 'block';
+            complimentContainer.style.display = "block";
         }
 
         if (char.flipCards && flipCardsContainer) {
-            flipCardsContainer.style.display = 'flex';
-            const flipImgNoAi = document.getElementById('flip-img-no-ai');
-            const flipImgAi = document.getElementById('flip-img-ai');
-            const flipLabelWithout = document.querySelector('.flip-card-front h3:first-of-type');
-            const flipLabelWith = document.querySelectorAll('.flip-card-front h3')[1];
+            flipCardsContainer.style.display = "flex";
+            const flipImgNoAi = document.getElementById("flip-img-no-ai");
+            const flipImgAi = document.getElementById("flip-img-ai");
+            const flipLabelWithout = document.querySelector(
+                ".flip-card-front h3:first-of-type",
+            );
+            const flipLabelWith = document.querySelectorAll(
+                ".flip-card-front h3",
+            )[1];
 
             if (flipImgNoAi) flipImgNoAi.src = char.flipCards.withoutAi;
             if (flipImgAi) flipImgAi.src = char.flipCards.withAi;
@@ -580,51 +645,57 @@ Ho ho hóó, wat een feest! 🎅✨`,
         }
 
         // Tarot Cards Section (Day 12)
-        const tarotMessageContainer = document.getElementById('tarot-message-container');
+        const tarotMessageContainer = document.getElementById(
+            "tarot-message-container",
+        );
         if (tarotCardsContainer) {
-            tarotCardsContainer.style.display = 'none';
+            tarotCardsContainer.style.display = "none";
         }
         if (tarotMessageContainer) {
-            tarotMessageContainer.style.display = 'none';
+            tarotMessageContainer.style.display = "none";
         }
 
         if (char.tarotCards && tarotCardsContainer) {
-            tarotCardsContainer.style.display = 'flex';
+            tarotCardsContainer.style.display = "flex";
 
             // Reset all cards to unflipped state and make visible
-            const tarotCards = tarotCardsContainer.querySelectorAll('.tarot-card');
-            tarotCards.forEach(card => {
-                card.classList.remove('flipped');
-                card.style.display = 'block';
+            const tarotCards =
+                tarotCardsContainer.querySelectorAll(".tarot-card");
+            tarotCards.forEach((card) => {
+                card.classList.remove("flipped");
+                card.style.display = "block";
             });
 
             // Hide all messages
             if (tarotMessageContainer) {
-                const allMessages = tarotMessageContainer.querySelectorAll('.tarot-message');
-                allMessages.forEach(msg => msg.classList.remove('active'));
+                const allMessages =
+                    tarotMessageContainer.querySelectorAll(".tarot-message");
+                allMessages.forEach((msg) => msg.classList.remove("active"));
             }
 
             // Add click event to each card
-            tarotCards.forEach(card => {
+            tarotCards.forEach((card) => {
                 card.onclick = function () {
-                    const cardNumber = this.getAttribute('data-card');
+                    const cardNumber = this.getAttribute("data-card");
 
                     // Flip this card
-                    this.classList.add('flipped');
+                    this.classList.add("flipped");
 
                     // Hide other cards
-                    tarotCards.forEach(otherCard => {
+                    tarotCards.forEach((otherCard) => {
                         if (otherCard !== this) {
-                            otherCard.style.display = 'none';
+                            otherCard.style.display = "none";
                         }
                     });
 
                     // Show corresponding message
                     if (tarotMessageContainer) {
-                        tarotMessageContainer.style.display = 'block';
-                        const message = tarotMessageContainer.querySelector(`[data - message="${cardNumber}"]`);
+                        tarotMessageContainer.style.display = "block";
+                        const message = tarotMessageContainer.querySelector(
+                            `[data - message="${cardNumber}"]`,
+                        );
                         if (message) {
-                            message.classList.add('active');
+                            message.classList.add("active");
                         }
                     }
                 };
@@ -632,32 +703,36 @@ Ho ho hóó, wat een feest! 🎅✨`,
         }
 
         // Sam's Phone Interaction Logic
-        const samPhoneContainer = document.getElementById('sam-phone-container');
+        const samPhoneContainer = document.getElementById(
+            "sam-phone-container",
+        );
         if (samPhoneContainer) {
             if (char.samPhone) {
-                samPhoneContainer.style.display = 'flex'; // Use flex to center
+                samPhoneContainer.style.display = "flex"; // Use flex to center
 
-                const phoneWrapper = samPhoneContainer.querySelector('.sam-phone-wrapper');
-                const phoneImg = document.getElementById('sam-phone-img');
-                const resultImg = document.getElementById('sam-result-img');
-                const photoZones = samPhoneContainer.querySelector('.sam-photo-zones');
+                const phoneWrapper =
+                    samPhoneContainer.querySelector(".sam-phone-wrapper");
+                const phoneImg = document.getElementById("sam-phone-img");
+                const resultImg = document.getElementById("sam-result-img");
+                const photoZones =
+                    samPhoneContainer.querySelector(".sam-photo-zones");
 
                 // Map photo names to image paths
                 const photoMap = {
-                    'bovensterij1': 'images/bovensterij1.jpg',
-                    'bovensterij2': 'images/bovensterij2.jpg',
-                    'bovensterij3': 'images/bovensterij3.jpg',
-                    'ondersterij1': 'images/ondersterij1.jpg',
-                    'ondersterij2': 'images/ondersterij2.jpg',
-                    'ondersterij3': 'images/ondersterij3.jpg'
+                    bovensterij1: "images/bovensterij1.jpg",
+                    bovensterij2: "images/bovensterij2.jpg",
+                    bovensterij3: "images/bovensterij3.jpg",
+                    ondersterij1: "images/ondersterij1.jpg",
+                    ondersterij2: "images/ondersterij2.jpg",
+                    ondersterij3: "images/ondersterij3.jpg",
                 };
 
                 let isShowingResult = false;
 
                 // Reset state - use visibility for phone to maintain layout
-                phoneImg.classList.remove('hidden-for-result');
-                resultImg.style.display = 'none';
-                if (photoZones) photoZones.style.display = 'grid';
+                phoneImg.classList.remove("hidden-for-result");
+                resultImg.style.display = "none";
+                if (photoZones) photoZones.style.display = "grid";
                 isShowingResult = false;
 
                 // Remove existing click listeners to prevent duplicates (clone node)
@@ -665,30 +740,37 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 phoneWrapper.parentNode.replaceChild(newWrapper, phoneWrapper);
 
                 // Re-select elements after clone
-                const activeWrapper = samPhoneContainer.querySelector('.sam-phone-wrapper');
-                const activePhoneImg = document.getElementById('sam-phone-img');
-                const activeResultImg = document.getElementById('sam-result-img');
-                const activeCloseBtn = document.getElementById('sam-close-btn');
-                const activePhotoZones = activeWrapper.querySelector('.sam-photo-zones');
+                const activeWrapper =
+                    samPhoneContainer.querySelector(".sam-phone-wrapper");
+                const activePhoneImg = document.getElementById("sam-phone-img");
+                const activeResultImg =
+                    document.getElementById("sam-result-img");
+                const activeCloseBtn = document.getElementById("sam-close-btn");
+                const activePhotoZones =
+                    activeWrapper.querySelector(".sam-photo-zones");
 
                 // Initial state for close button
-                if (activeCloseBtn) activeCloseBtn.style.display = 'none';
+                if (activeCloseBtn) activeCloseBtn.style.display = "none";
 
                 // Add click handlers to each photo zone
-                const zones = activeWrapper.querySelectorAll('.photo-zone');
-                zones.forEach(zone => {
-                    zone.addEventListener('click', (e) => {
+                const zones = activeWrapper.querySelectorAll(".photo-zone");
+                zones.forEach((zone) => {
+                    zone.addEventListener("click", (e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         if (!isShowingResult) {
-                            const photoName = zone.getAttribute('data-photo');
+                            const photoName = zone.getAttribute("data-photo");
                             const imagePath = photoMap[photoName];
                             if (imagePath) {
                                 activeResultImg.src = imagePath;
-                                activePhoneImg.classList.add('hidden-for-result');
-                                activeResultImg.style.display = 'block';
-                                if (activePhotoZones) activePhotoZones.style.display = 'none';
-                                if (activeCloseBtn) activeCloseBtn.style.display = 'flex';
+                                activePhoneImg.classList.add(
+                                    "hidden-for-result",
+                                );
+                                activeResultImg.style.display = "block";
+                                if (activePhotoZones)
+                                    activePhotoZones.style.display = "none";
+                                if (activeCloseBtn)
+                                    activeCloseBtn.style.display = "flex";
                                 isShowingResult = true;
                             }
                         }
@@ -696,84 +778,86 @@ Ho ho hóó, wat een feest! 🎅✨`,
                 });
 
                 // Click on result image or close button to go back
-                activeResultImg.addEventListener('click', (e) => {
+                activeResultImg.addEventListener("click", (e) => {
                     e.preventDefault();
                     if (isShowingResult) {
-                        activeResultImg.style.display = 'none';
-                        activePhoneImg.classList.remove('hidden-for-result');
-                        if (activePhotoZones) activePhotoZones.style.display = 'grid';
-                        if (activeCloseBtn) activeCloseBtn.style.display = 'none';
+                        activeResultImg.style.display = "none";
+                        activePhoneImg.classList.remove("hidden-for-result");
+                        if (activePhotoZones)
+                            activePhotoZones.style.display = "grid";
+                        if (activeCloseBtn)
+                            activeCloseBtn.style.display = "none";
                         isShowingResult = false;
                     }
                 });
 
                 if (activeCloseBtn) {
-                    activeCloseBtn.addEventListener('click', (e) => {
+                    activeCloseBtn.addEventListener("click", (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        activeResultImg.style.display = 'none';
-                        activePhoneImg.classList.remove('hidden-for-result');
-                        if (activePhotoZones) activePhotoZones.style.display = 'grid';
-                        activeCloseBtn.style.display = 'none';
+                        activeResultImg.style.display = "none";
+                        activePhoneImg.classList.remove("hidden-for-result");
+                        if (activePhotoZones)
+                            activePhotoZones.style.display = "grid";
+                        activeCloseBtn.style.display = "none";
                         isShowingResult = false;
                     });
                 }
-
             } else {
-                samPhoneContainer.style.display = 'none';
+                samPhoneContainer.style.display = "none";
             }
         }
 
         // Display closing text if present
         if (char.closingText && closingTextContainer) {
-            closingTextContainer.style.display = 'block';
+            closingTextContainer.style.display = "block";
             // Use innerHTML to support HTML links
-            if (char.closingText.includes('<a')) {
+            if (char.closingText.includes("<a")) {
                 closingTextContainer.innerHTML = char.closingText;
             } else {
                 closingTextContainer.textContent = char.closingText;
             }
         }
 
-        const videoContainer = document.getElementById('video-container');
+        const videoContainer = document.getElementById("video-container");
         if (char.video && videoContainer) {
-            videoContainer.style.display = 'block';
+            videoContainer.style.display = "block";
             videoContainer.innerHTML = `<video class="video-player" controls>
         <source src="${char.video}" type="video/mp4">
             Your browser does not support the video tag.
         </video>`;
         } else if (videoContainer) {
-            videoContainer.style.display = 'none';
-            videoContainer.innerHTML = '';
+            videoContainer.style.display = "none";
+            videoContainer.innerHTML = "";
         }
 
-        modal.classList.remove('hidden');
+        modal.classList.remove("hidden");
 
         // Auto-close modal after 2 minutes (120000ms)
         if (window.modalAutoCloseTimer) {
             clearTimeout(window.modalAutoCloseTimer);
         }
         window.modalAutoCloseTimer = setTimeout(() => {
-            modal.classList.add('hidden');
+            modal.classList.add("hidden");
         }, 120000);
     }
 
     if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener("click", () => {
             if (window.modalAutoCloseTimer) {
                 clearTimeout(window.modalAutoCloseTimer);
             }
-            modal.classList.add('hidden');
+            modal.classList.add("hidden");
         });
     }
 
     if (modal) {
-        modal.addEventListener('click', (e) => {
+        modal.addEventListener("click", (e) => {
             if (e.target === modal) {
                 if (window.modalAutoCloseTimer) {
                     clearTimeout(window.modalAutoCloseTimer);
                 }
-                modal.classList.add('hidden');
+                modal.classList.add("hidden");
             }
         });
     }
@@ -787,20 +871,25 @@ Ho ho hóó, wat een feest! 🎅✨`,
         dayElements = [];
 
         // Find the star element
-        const starElement = document.querySelector('.star-box');
+        const starElement = document.querySelector(".star-box");
         if (starElement) {
-            dayElements.push({ element: starElement, day: 'star' });
+            dayElements.push({ element: starElement, day: "star" });
         }
 
         // Find all interactive days in order (8-19)
         const interactiveDays = [8, 9, 10, 11, 12, 15, 16, 17, 18, 19];
-        interactiveDays.forEach(dayNum => {
-            const char = characters.find(c => c.day === dayNum);
+        interactiveDays.forEach((dayNum) => {
+            const char = characters.find((c) => c.day === dayNum);
             if (char && char.interactive && isDayUnlocked(dayNum)) {
                 // Find the corresponding day box
-                const dayBoxes = document.querySelectorAll('.day-box.ball--dark, .tree-trunk');
-                dayBoxes.forEach(box => {
-                    if (box.textContent === String(dayNum) && !box.classList.contains('ball--locked')) {
+                const dayBoxes = document.querySelectorAll(
+                    ".day-box.ball--dark, .tree-trunk",
+                );
+                dayBoxes.forEach((box) => {
+                    if (
+                        box.textContent === String(dayNum) &&
+                        !box.classList.contains("ball--locked")
+                    ) {
                         dayElements.push({ element: box, day: dayNum });
                     }
                 });
@@ -812,18 +901,18 @@ Ho ho hóó, wat een feest! 🎅✨`,
     setTimeout(initializeKeyboardNavigation, 100);
 
     // Listen for Enter key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
             // Don't interfere with password input
-            if (passwordOverlay && passwordOverlay.style.display !== 'none') {
+            if (passwordOverlay && passwordOverlay.style.display !== "none") {
                 return;
             }
 
             e.preventDefault();
 
             // If modal is open, close it first
-            if (modal && !modal.classList.contains('hidden')) {
-                modal.classList.add('hidden');
+            if (modal && !modal.classList.contains("hidden")) {
+                modal.classList.add("hidden");
             }
 
             // Move to next day
