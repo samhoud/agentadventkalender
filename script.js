@@ -231,12 +231,7 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             day: 18,
             name: "Throwback Thursday",
             interactive: true,
-            desc: `Ho ho hóó lieve consultantjes van &samhoud!
-Zelfs Kerstmis is dit jaar een stuk efficiënter geworden sinds de komst van jullie slimme AI agents. Zo efficiënt zelfs, dat Throwback Thursday twee dagen eerder uitgevoerd kan worden—jawel hoor—op Throwback Tuesday!
-
-Dus leun lekker achterover, neem een warme chocolademelk, en geniet van deze prachtige &samhoud-kiekjes uit vervlogen tijden.
-
-Ho ho hóó, wat een feest! 🎅✨`,
+            desc: `<b>Ho ho ho, time to rewind.</b> Het kerstfeest van vorig jaar. Wat een avond was dat!<br><br>Hier zijn de herinneringen. De momenten die je vergeten was (of wilde vergeten).<br><br>We hebben foto's als bewijs. Maar let op: <b>één van deze foto's heeft nooit plaatsgevonden.</b><br>AI-gegenereerd. Fake news. Een digitale herinnering gemaakt door een van onze agents.<br><br><i>Zie jij welke fake is?</i><br><br><b>Morgen: de finale</b><br>Morgen. Je wordt wakker. Licht krokant van gisteravond. Het eerste wat je doet - na water en paracetamol - is het laatste vakje openen.<br>En daar wacht hij: een klassieke hersenkraker. Voor de fanatiekeling die elke dag heeft gevolgd. Die goed heeft opgelet.<br><br><b>Wie is de slimste sammie?</b><br><br>Morgen komen we erachter`,
             images: [
                 "images/dag18_1.jpg",
                 "images/dag18_2.jpg",
