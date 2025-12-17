@@ -82,6 +82,8 @@ de Kerstman 🎅✨`,
             name: "Syl de salesvoorbereider",
             interactive: true,
             image: "images/Syl.png",
+            sylInteraction: true,
+            sylText: "Ik trap af bij de haard: stoel 1. Ik moet Olivia naast me hebben. Ik moet eerst alles weten voordat ik mijn sales af kan sluiten. En Vera? Die moet er ook bij. Zonder goed verhaal een sales.",
             desc: `<b>Syl heeft één missie:</b> ervoor zorgen dat jij nooit meer onvoorbereid een salesgesprek ingaat.
 
 Dit is een <b>Super Prompt</b> voor de Copilot Research Agent. Je stopt er een bedrijfsnaam en gesprekspartner in, Syl geeft je een compleet dossier:
@@ -110,6 +112,8 @@ Aan de slag? Check de Sales Super Prompt op SharePoint: <a href="https://samhoud
             day: 10,
             name: "Fenna de Feedbackfixer",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Ik zou je graag eerlijke feedback geven:<br><br>– Ik ben erg fan van Sam, en wil hem rechts naast mij (met de klok mee).<br>– Ik ben minder fan van de interacties met Syl.<br>– Maar Cees naast mij zetten is zeker een goed idee.",
             image: "images/Fenna.png",
             desc: `Ho ho ho, het is weer die tijd van het jaar.
 Nee, niet Kerst. <b>Endyears.</b>
@@ -128,6 +132,8 @@ Fenna de Feedbackfixer maakt een eind aan alle stress. Ze helpt je om feedback n
             day: 11,
             name: "Identiteitscrisis!",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Mijn analyse is duidelijk: ik werk het best naast Sam. Ik zit niet naast Syl. Aan mijn andere kant zit Vera, dan kan ik de hele avond naar haar verhalen luisteren.",
             image: "images/Interview.png",
             desc: `<b>Help deze agent uit haar identiteitscrisis!</b>
 Een jaar in ontwikkeling. Sinds oktober live. En ze is een machine.
@@ -165,6 +171,8 @@ Ze verdient beter. Een naam die matcht met haar skills én haar nieuwe look.
             day: 12,
             name: "Olivia het Orakel",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Ik wil gewoon duidelijk zijn:<br>– Ik zit naast Syl.<br>– Ik zit niet naast Vera.<br>– Ik zit niet naast Sam.",
             image: "images/Olivia het Orakel.jpg",
             desc: `Je kent haar al. <a href="https://teams.microsoft.com/l/app/c03c8129-a4fa-4194-972b-e654197fcdda?source=app-header-share-entrypoint" target="_blank" style="color: var(--helio-cosmos); font-weight: bold; text-decoration: underline;">Olivia het Orakel</a>, je vriendelijke Copilot agent in Teams voor al je interne vragen over <b>People</b>, <b>Finance</b> én <b>IT</b>. Van <i>"wie is ook alweer de management assistent van Laura?"</i> tot <i>"welke kosten mag ik declareren?"</i> – Olivia zoekt het voor je uit, zonder oordeel.
 
@@ -183,6 +191,8 @@ Naast dat onze alwetende Olivia al jouw vragen over People, Finance en IT kan be
             day: 15,
             name: "Vera de Verhalenverteller",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Ooit, lang lang geleden in een land hier ver vandaan, begon mijn liefde voor verhalen. Ik was een kind dat uren kon verdwalen in boeken, terwijl buiten de sneeuw zachtjes viel. Elk hoofdstuk voelde als een nieuwe wereld, elke bladzijde een deur die openging naar iets onbekends.<br><br>Toen ik ouder werd, ontdekte ik dat verhalen niet alleen in boeken leven, maar ook aan tafels. Gesprekken zijn als verhaallijnen: ze hebben spanning, wendingen en soms een verrassend einde. Daarom ben ik kieskeurig met wie ik naast me heb zitten. Fenna? Nee, haar feedback is scherp, maar tijdens een kerstdiner wil ik geen rapportcijfers horen. Olivia? Het Orakel voorspelt alles van tevoren—en ik hou van onverwachte plot twists.<br><br>Ilse daarentegen… haar vragen zijn goud waard. Ze graaft dieper, haalt lagen naar boven die ik zelf nog niet had gezien. En Syl? Syl brengt energie, verhalen over kansen en dromen. Die wil ik aan de Andere kant, want die opent deuren naar nieuwe hoofdstukken.<br><br>Zo zit ik hier, met een tafel vol karakters. Elk van ons draagt een verhaal, en samen schrijven we een kerstvertelling die niemand had kunnen voorspellen. Want dat is het geheim van een goed verhaal: het ontstaat tussen mensen, niet op papier.",
             image: "images/Vera de Verhalenverteller.jpg",
             desc: `<b>Vera de Verhalenverteller</b>
 
@@ -211,6 +221,8 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             day: 16,
             name: "Sam de Sessiebouwer",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Voor een soepele flow wil ik letterlijk tussen analyse en feedback zitten:<br>Ilse aan de ene kant, Fenna aan de andere. Zet mij daartussen,<br>dan rolt deze tafel vanzelf.",
             image: "images/Sam de Sessiebouwer.jpg",
             desc: `<b>Even opfrissen: wat doet Sam?</b><br>Sam de Sessiebouwer helpt je om snel een eerste concept van een sessieprogramma te maken. Upload een transcriptbriefing met doelen, doelgroep en context, en Sam bouwt een volledig programma: interventies, materialenlijst, actielijst. Alles om meteen aan de slag te kunnen.<br><br><b>Maar de echte vraag: hoe weet Sam welke interventies werken?</b><br>Daar hebben Sam en zijn agent owner Hester onderzoek naar gedaan. Een intensieve research trip. Want échte doorbraken creëren? Dat vraagt om diepgaand onderzoek. En ze hebben het grondig aangepakt.<br><br><i>Wil jij ook weten welke lessen zij hebben geleerd van een ijsbad? Of wat de vergelijking is tussen verandering leiden en zuurdesem bakken?</i><br><br>Alle antwoorden staan op hun Instagram.`,
             samPhone: true,
@@ -220,6 +232,8 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             day: 17,
             name: "Cees de Casebot",
             interactive: true,
+            sylInteraction: true,
+            sylText: "Situatie: Tijdens het kerstdiner is de juiste plaatsing van mij essentieel om optimale interactie te garanderen.<br>Analyse:<br>Ik vind verhalen wel leuk om te horen, maar wil niet direct verplicht worden om ernaar te luisteren. Verder heb ik interesse in alle feiten, dus Olivia moet naast me zitten.<br>Conclusie:<br>Op basis van deze voorwaarden moet ik twee stoelen rechts (met de klok mee) van Syl zitten en moet Olivia één van mijn directe buren zijn.",
             image: "images/Cees de casebot - pen.jpg",
             desc: `<h3>Project klaar. Case nog niet. Paniek?</h3><p>Geen paniek. <b>Even Cees bellen.</b></p><p>Cees de Casebot maakt van jullie Teams-transcript in één klap een <b>70% klantcase</b>. Strak format, consistente taal, minder gepruts. Gewoon goed.</p>
               <h4>Resultaten tot nu toe</h4><ul><li><b>15 cases</b> geschreven</li><li><b>NPS +50</b></li><li>Gemiddeld <b>60% efficiënter</b> (besparing: ruim <b>€2000</b> per case)</li></ul>
@@ -586,7 +600,32 @@ Je kan haar terug vinden in Virtual Brain via deze link:
         // Display single image if present
         if (char.image && imageContainer) {
             imageContainer.style.display = "block";
-            imageContainer.innerHTML = `<img src="${char.image}" alt="${char.name}" class="character-image">`;
+
+            if (char.sylInteraction) {
+                imageContainer.innerHTML = `
+                <div class="syl-wrapper">
+                    <img src="${char.image}" class="character-image syl-image-glow" alt="${char.name}">
+                    <div class="sparkles"></div>
+                    <div class="syl-popup-overlay">
+                        <p class="syl-popup-text">${char.sylText}</p>
+                        <div class="syl-close-hint">(Klik om te sluiten)</div>
+                    </div>
+                </div>`;
+
+                // Add click event to toggle popup
+                const wrapper = imageContainer.querySelector('.syl-wrapper');
+                const popup = imageContainer.querySelector('.syl-popup-overlay');
+
+                wrapper.addEventListener('click', () => {
+                    if (popup.style.display === 'flex') {
+                        popup.style.display = 'none';
+                    } else {
+                        popup.style.display = 'flex';
+                    }
+                });
+            } else {
+                imageContainer.innerHTML = `<img src="${char.image}" alt="${char.name}" class="character-image">`;
+            }
         }
 
         if (char.images && char.images.length > 0 && carouselContainer) {
