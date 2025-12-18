@@ -266,9 +266,36 @@ Je kan haar terug vinden in Virtual Brain via deze link:
         },
         {
             day: 19,
-            name: "19 December",
-            desc: "Coming soon...",
+            name: "Kerstdiner & Copilot Wrapped",
             interactive: true,
+            seatingPuzzle: true,
+            image: "images/leegkerstdiner.png",
+            desc: `De adventskalender loopt ten einde, maar er wacht nog één laatste uitdaging. Een tafel, acht stoelen, en zeven AI-agents die allemaal heel specifieke wensen hebben over waar ze willen zitten tijdens het kerstdiner.
+            
+Jij hebt de afgelopen weken al hun voorkeuren gehoord. Nu is het tijd om te bewijzen dat je hebt opgelet. Plaats elke agent op de juiste stoel rond de haard, en onthul het geheim van de perfecte tafelopstelling.
+
+<b>Hint:</b> Speur door de vorige dagen waar elke agent werd geïntroduceerd. Daar vind je aanwijzingen over hun voorkeuren en waar ze het liefst willen zitten.
+
+Let op: één verkeerde keuze en de hele avond loopt uit de hand. Geen druk natuurlijk...`,
+            successImage: "images/kerstdiner.jpg",
+            successText: "Gefeliciteerd, je hebt het raadsel opgelost!",
+            closingText: `En zo sluit de adventskalender af met een tafel vol verhalen, inzichten en een beetje AI-magie. Elke agent heeft zijn plek gevonden, net als elke dag zijn verhaal heeft verteld.
+
+Nu het werkjaar bijna ten einde komt, is dit het perfecte moment voor een terugblik! 🚀 Wist je dat je in Copilot je eigen "Wrapped" kunt krijgen? Het is een leuke manier om te zien waar je het afgelopen jaar mee bezig bent geweest, welke projecten de overhand hadden en wat je meest memorabele momenten waren.
+
+Kopieer de onderstaande prompt en voer deze uit in Copilot om jouw persoonlijke overzicht te genereren:
+
+<div class="prompt-box">
+    <div class="prompt-title">🎁 Copilot Wrapped 2025 Prompt:</div>
+    <div class="prompt-content">
+        Maak een Spotify Wrapped-stijl eindejaars­samenvatting van al mijn acties, meetings en gesprekken dit jaar, waarin je mijn meest terugkerende onderwerpen, meest besproken hobby’s of projecten, memorabele gesprekken en grappige patronen in wat ik vraag of hoe ik praat uitlicht. Presenteer het in een leuke, Spotify Wrapped-stijl opmaak met koppen zoals “Top 5 Onderwerpen”, “Meest Onverwachte Vraag”, “Grootste Obsessie” en “Kenmerkende Stijl”, en voeg een maand-tot-maand overzicht toe waarin mijn grootste hyperfixatie, favoriete onderwerp of stemmings­verandering per maand wordt genoteerd. Houd de toon speels en geestig, met vette koppen, emoji’s en korte, pittige commentaar zoals Spotify dat doet.
+    </div>
+</div>
+
+Bedankt dat je meedeed, en geniet van het echte kerstdiner. Hopelijk met net zoveel plezier (en iets minder puzzelstress) als deze digitale versie.
+
+Tot volgend jaar! 🎄✨`,
+            correctOrder: ["Syl", "Olivia", "Cees", "Fenna", "Sam", "Ilse", "Vera"]
         },
         { day: 20, name: "20 December", desc: "", interactive: false },
         { day: 21, name: "21 December", desc: "", interactive: false },
@@ -738,6 +765,89 @@ Je kan haar terug vinden in Virtual Brain via deze link:
             });
         }
 
+        // Seating Puzzle Section (Day 19)
+        const seatingPuzzleContainer = document.getElementById("seating-puzzle-container");
+        if (seatingPuzzleContainer) {
+            seatingPuzzleContainer.style.display = "none";
+        }
+
+        if (char.seatingPuzzle && seatingPuzzleContainer) {
+            seatingPuzzleContainer.style.display = "block";
+
+            const dropdowns = seatingPuzzleContainer.querySelectorAll(".seat-dropdown");
+            const successDiv = document.getElementById("seating-success");
+            const successText = document.getElementById("seating-success-text");
+            const successImage = document.getElementById("seating-success-image");
+
+            // Reset success message
+            if (successDiv) successDiv.style.display = "none";
+
+            // Reset all dropdowns
+            dropdowns.forEach(dropdown => {
+                dropdown.value = "";
+                dropdown.parentElement.classList.remove("seat-correct", "seat-incorrect");
+            });
+
+            // Add change listeners to all dropdowns
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("change", () => {
+                    validateSeating();
+                });
+            });
+
+            function validateSeating() {
+                const selections = [];
+                let allFilled = true;
+
+                // Collect all selections
+                dropdowns.forEach(dropdown => {
+                    const seatIndex = parseInt(dropdown.dataset.seat);
+                    const value = dropdown.value;
+
+                    if (value === "") {
+                        allFilled = false;
+                        dropdown.parentElement.classList.remove("seat-correct", "seat-incorrect");
+                    } else {
+                        selections[seatIndex] = value;
+
+                        // Check if this selection is correct
+                        if (value === char.correctOrder[seatIndex]) {
+                            dropdown.parentElement.classList.remove("seat-incorrect");
+                            dropdown.parentElement.classList.add("seat-correct");
+                        } else {
+                            dropdown.parentElement.classList.remove("seat-correct");
+                            dropdown.parentElement.classList.add("seat-incorrect");
+                        }
+                    }
+                });
+
+                // Check if all are filled and all are correct
+                if (allFilled) {
+                    let allCorrect = true;
+                    for (let i = 0; i < char.correctOrder.length; i++) {
+                        if (selections[i] !== char.correctOrder[i]) {
+                            allCorrect = false;
+                            break;
+                        }
+                    }
+
+                    if (allCorrect) {
+                        // Show success message and image
+                        if (successDiv && successText && successImage) {
+                            successText.textContent = char.successText;
+                            successImage.src = char.successImage;
+                            successDiv.style.display = "block";
+
+                            // Scroll to success message
+                            setTimeout(() => {
+                                successDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+                            }, 300);
+                        }
+                    }
+                }
+            }
+        }
+
         // Sam's Phone Interaction Logic
         const samPhoneContainer = document.getElementById(
             "sam-phone-container",
@@ -847,8 +957,8 @@ Je kan haar terug vinden in Virtual Brain via deze link:
         // Display closing text if present
         if (char.closingText && closingTextContainer) {
             closingTextContainer.style.display = "block";
-            // Use innerHTML to support HTML links
-            if (char.closingText.includes("<a")) {
+            // Use innerHTML to support HTML formatting (links, boxes, etc)
+            if (char.closingText.includes("<")) {
                 closingTextContainer.innerHTML = char.closingText;
             } else {
                 closingTextContainer.textContent = char.closingText;

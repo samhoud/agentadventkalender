@@ -1155,24 +1155,56 @@ body {
 }
 
 /* CLOSING TEXT STYLES */
-/* CLOSING TEXT STYLES */
 .closing-text-container {
     margin-top: 1.5rem;
-    font-size: 1.05rem;
+    font-size: 0.95rem !important;
     line-height: 1.5;
-    background: transparent;
-    color: var(--deep-sky);
-    /* Standard text color */
+    background: transparent !important;
+    color: var(--deep-sky) !important;
     padding: 0;
-    text-align: left;
+    text-align: left !important;
     border-radius: 0;
     font-weight: normal;
     box-shadow: none;
+    display: none;
 }
 
 .closing-text-container b {
     color: inherit;
-    /* Prevent orange override */
+}
+
+/* Prompt Box Styles (Day 19 Copilot Wrapped) */
+.prompt-box {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(180, 187, 250, 0.1);
+    border: 2px dashed var(--celestial-iris);
+    border-radius: 12px;
+    font-family: inherit;
+    position: relative;
+}
+
+.prompt-title {
+    font-weight: bold;
+    color: var(--deep-sky);
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prompt-content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    user-select: all;
+    /* Easy to copy */
 }
 
 /* VIDEO STYLES */
@@ -1363,19 +1395,7 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* CLOSING TEXT STYLES */
-.closing-text-container {
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    background: transparent;
-    color: var(--deep-sky);
-    padding: 0;
-    text-align: left;
-    border-radius: 0;
-    font-weight: normal;
-    box-shadow: none;
-}
+/* Unified closing-text-container above */
 
 /* VIDEO STYLES */
 .video-container {
@@ -1560,19 +1580,7 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* CLOSING TEXT STYLES */
-.closing-text-container {
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    background: transparent;
-    color: var(--deep-sky);
-    padding: 0;
-    text-align: left;
-    border-radius: 0;
-    font-weight: normal;
-    box-shadow: none;
-}
+/* Redundant closing-text-container removed */
 
 /* VIDEO STYLES */
 .video-container {
@@ -1822,5 +1830,124 @@ body {
     to {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Seating Puzzle Styles (Day 19) */
+.seating-puzzle-container {
+    margin: 1.5rem 0;
+}
+
+.seating-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.seat-box {
+    border: 2px solid var(--blue-ocean);
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--infinite-ivory);
+    transition: all 0.3s ease;
+}
+
+.seat-fixed {
+    background: linear-gradient(135deg, var(--helio-cosmos), var(--celestrial-iris));
+    color: var(--infinite-ivory);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--deep-sky);
+}
+
+.seat-fixed .seat-label {
+    color: var(--deep-sky);
+}
+
+.seat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--deep-sky);
+    text-align: center;
+}
+
+.seat-dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--blue-ocean);
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.seat-dropdown:focus {
+    outline: none;
+    border-color: var(--helio-cosmos);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.seat-correct {
+    background: rgba(0, 255, 0, 0.1) !important;
+    border-color: #2ecc71 !important;
+}
+
+.seat-correct .seat-dropdown {
+    border-color: #2ecc71;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+.seat-incorrect {
+    background: rgba(255, 0, 0, 0.1) !important;
+    border-color: #e74c3c !important;
+}
+
+.seat-incorrect .seat-dropdown {
+    border-color: #e74c3c;
+    background: rgba(255, 0, 0, 0.05);
+}
+
+.seating-success {
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--deep-sky), var(--blue-ocean));
+    border-radius: 20px;
+    color: var(--infinite-ivory);
+    animation: successPulse 0.5s ease-out;
+}
+
+.seating-success h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--infinite-ivory);
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
